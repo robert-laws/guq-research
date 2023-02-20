@@ -46,7 +46,6 @@ export const UpdatePublication = () => {
     publicationAffiliation: '',
     cirsSponsored: '',
     publishingGroup: '',
-    fullText: '',
   });
 
   useEffect(() => {
@@ -80,6 +79,8 @@ export const UpdatePublication = () => {
     'Research Paper',
     'Other',
   ];
+
+  const publishingGroupTypes = ['CIRS Staff', 'Faculty', 'Other Academic'];
 
   const handleTextChange = (e) => {
     setEditedPublication({
@@ -820,24 +821,14 @@ export const UpdatePublication = () => {
                         <option key='Select' value=''>
                           Select...
                         </option>
-                        <option key='Faculty (FT)' value='Faculty (FT)'>
-                          Faculty (FT)
-                        </option>
-                        <option key='Students' value='Students'>
-                          Students
-                        </option>
-                        <option
-                          key='Staff (excluding CIRS)'
-                          value='Staff (excluding CIRS)'
-                        >
-                          Staff (excluding CIRS)
-                        </option>
-                        <option key='CIRS Staff' value='CIRS Staff'>
-                          CIRS Staff
-                        </option>
-                        <option key='Other' value='Other'>
-                          Other
-                        </option>
+                        {publishingGroupTypes.map((publishingGroupType) => (
+                          <option
+                            key={publishingGroupType}
+                            value={publishingGroupType}
+                          >
+                            {publishingGroupType}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
