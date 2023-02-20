@@ -1,0 +1,9 @@
+export { Template } from './Template';
+export { JournalArticle } from './JournalArticle';
+export { AuthoredBook } from './AuthoredBook';
+export { EditedBook } from './EditedBook';
+export { BookChapter } from './BookChapter';
+export { Editorial } from './Editorial';
+export { ResearchPaper } from './ResearchPaper';
+export { ConferencePaper } from './ConferencePaper';
+export { Other } from './Other';
