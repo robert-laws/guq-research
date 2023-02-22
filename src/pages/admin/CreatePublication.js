@@ -62,10 +62,16 @@ export const CreatePublication = () => {
     'Edited Book',
     'Journal Article',
     'Research Paper',
-    'Other',
+    'Other Document Type',
   ];
 
-  const publishingGroupTypes = ['CIRS Staff', 'Faculty', 'Other Academic'];
+  const publishingGroupTypes = [
+    'CIRS Staff',
+    'Faculty',
+    'Student/Alumni',
+    'Staff',
+    'Other',
+  ];
 
   const handleTextChange = (e) => {
     setNewPublication({
@@ -108,7 +114,9 @@ export const CreatePublication = () => {
                 <h3 className='text-lg font-medium leading-6 text-gray-900'>
                   Publication Information
                 </h3>
-                <p className='mt-1 text-sm text-gray-500'>...</p>
+                <p className='mt-1 text-sm text-gray-500'>
+                  Use this form to add a new publication to the database.
+                </p>
               </div>
               <div className='mt-6 pt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6'>
                 <div className='sm:col-span-3'>

@@ -226,7 +226,7 @@ export const AuthoredBook = ({
               </dd>
             </div>
           )}
-          {sustainableDevelopmentGoals.length > 0 && (
+          {/* {sustainableDevelopmentGoals.length > 0 && (
             <div className='py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5'>
               <dt className='text-sm font-medium text-gray-900 text-left md:text-right'>
                 Sustainable Development Goals
@@ -237,7 +237,7 @@ export const AuthoredBook = ({
                 ))}
               </dd>
             </div>
-          )}
+          )} */}
         </dl>
       </div>
     </>
