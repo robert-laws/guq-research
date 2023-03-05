@@ -12,6 +12,6 @@ Phase 3 - To Do List
 - [ ] Refine the colors, logo, and footer content
 - [ ] Work on accessibility features
 - [ ] Work on all necessary documentation (e.g., what is included/excluded in the database; how the publication data were collected; what sources were used to collect the publication data; who the alternative contact persons are; procedure for keeping the database up-to-date; and so on) Lokman
-- [ ] \*\*\* Shaida emphasized that we add a filter that separates publications that list GU-Q as affiliation from those that do not (Lokman, after you add the filter to the database and the forms)
+- [x] \*\*\* Shaida emphasized that we add a filter that separates publications that list GU-Q as affiliation from those that do not (Lokman, after you add the filter to the database and the forms)
 - [ ] Tons of editing and new data to be incorporated into the database (Lokman)
 - [x] Deleting several author profiles and records and adding all missing publication data up to 2022 (Lokman)

@@ -6,6 +6,8 @@ export { SortText } from './SortText';
 export { DataLoadPublications } from './DataLoadPublications';
 export { DataLoadAuthors } from './DataLoadAuthors';
 
+export { DataUpdateGlobal } from './DataUpdateGlobal';
+
 // Publications Refactor
 export { SortData } from './SortData';
 export { SortByTextField } from './SortByTextField';

@@ -4,6 +4,7 @@ import interactionsContext from '../context/interactions/interactionsContext';
 import { Container } from '../components';
 // import { DataLoadPublications } from '../utilities';
 // import { DataLoadAuthors } from '../utilities';
+// import { DataUpdateGlobal } from '../utilities';
 
 export const Home = () => {
   // TODO: Add full-text search feature
@@ -27,6 +28,7 @@ export const Home = () => {
     <Container>
       {/* <DataLoadPublications /> */}
       {/* <DataLoadAuthors /> */}
+      {/* <DataUpdateGlobal /> */}
       <main>
         <div className='relative px-6 lg:px-8'>
           <div className='mx-auto max-w-4xl py-14 sm:py-16 lg:py-18'>

@@ -68,9 +68,18 @@ export const CreatePublication = () => {
   const publishingGroupTypes = [
     'CIRS Staff',
     'Faculty',
-    'Student/Alumni',
+    'Visiting Faculty',
+    'Postdoc',
+    'Student',
     'Staff',
     'Other',
+  ];
+
+  const publicationAffiliationTypes = [
+    'GU-Q',
+    'GU-Main Campus',
+    'Other',
+    'None',
   ];
 
   const handleTextChange = (e) => {
@@ -773,7 +782,7 @@ export const CreatePublication = () => {
                     htmlFor='publicationAffiliation'
                     className='block text-sm font-medium text-gray-700'
                   >
-                    GUQ Affiliated
+                    Publication Affiliation
                   </label>
                   <div className='mt-1'>
                     <select
@@ -786,12 +795,16 @@ export const CreatePublication = () => {
                       <option key='Select' value=''>
                         Select...
                       </option>
-                      <option key='GUQ' value='GUQ'>
-                        GUQ
-                      </option>
-                      <option key='Non-GUQ' value='Non-GUQ'>
-                        Non-GUQ
-                      </option>
+                      {publicationAffiliationTypes.map(
+                        (publicationAffiliationType) => (
+                          <option
+                            key={publicationAffiliationType}
+                            value={publicationAffiliationType}
+                          >
+                            {publicationAffiliationType}
+                          </option>
+                        )
+                      )}
                     </select>
                   </div>
                 </div>
