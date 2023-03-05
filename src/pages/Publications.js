@@ -67,6 +67,7 @@ export const Publications = () => {
 
     if (query.length > 0 && publications.length > 0) {
       setFilters({
+        publicationAffiliation: [],
         publishingGroup: [],
         year: [],
         lastName: [],
@@ -93,6 +94,7 @@ export const Publications = () => {
 
   // local state for filters to populate the checkbox inputs
   const [filterLists, setFilterLists] = useState({
+    publicationAffiliation: [],
     publishingGroup: [],
     year: [],
     lastName: [],
@@ -101,6 +103,7 @@ export const Publications = () => {
   });
 
   const [filterListsResultCount, setFilterListsResultCount] = useState({
+    publicationAffiliation: [],
     publishingGroup: [],
     year: [],
     lastName: [],
@@ -114,6 +117,10 @@ export const Publications = () => {
   useEffect(() => {
     if (publications.length > 0) {
       setFilterLists({
+        publicationAffiliation: AddToList(
+          publications,
+          'publicationAffiliation'
+        ),
         publishingGroup: AddToList(publications, 'publishingGroup'),
         year: AddToList(publications, 'year'),
         lastName: AddToList(publications, 'lastName'),
@@ -126,6 +133,10 @@ export const Publications = () => {
   useEffect(() => {
     if (filteredPublications.length > 0) {
       setFilterListsResultCount({
+        publicationAffiliation: AddToList(
+          filteredPublications,
+          'publicationAffiliation'
+        ),
         publishingGroup: AddToList(filteredPublications, 'publishingGroup'),
         year: AddToList(filteredPublications, 'year'),
         lastName: AddToList(filteredPublications, 'lastName'),
@@ -293,6 +304,7 @@ export const Publications = () => {
 
   const handleResetClick = () => {
     setFilters({
+      publicationAffiliation: [],
       publishingGroup: [],
       year: [],
       lastName: [],
@@ -417,6 +429,8 @@ export const Publications = () => {
                                   ? 'Author Status'
                                   : list[0] === 'lastName'
                                   ? 'Author Name'
+                                  : list[0] === 'publicationAffiliation'
+                                  ? 'Publication Affiliation'
                                   : list[0].charAt(0).toUpperCase() +
                                     list[0].slice(1)}
                               </p>

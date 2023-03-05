@@ -13,6 +13,7 @@ const InteractionsState = ({ children }) => {
   const initialState = {
     query: '',
     filters: {
+      publicationAffiliation: [],
       publishingGroup: [],
       year: [],
       lastName: [],
