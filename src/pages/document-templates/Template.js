@@ -50,7 +50,7 @@ export const Template = ({
                 className='text-blue-500 hover:text-blue-800 hover:underline'
                 to={`/authors/${authorId}`}
               >
-                {firstName} {lastName}
+                {lastName}, {firstName}
               </Link>
             </dd>
           </div>

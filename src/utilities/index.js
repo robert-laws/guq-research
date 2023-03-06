@@ -8,6 +8,8 @@ export { DataLoadAuthors } from './DataLoadAuthors';
 
 export { DataUpdateGlobal } from './DataUpdateGlobal';
 
+export { DisplayJSON } from './DisplayJSON';
+
 // Publications Refactor
 export { SortData } from './SortData';
 export { SortByTextField } from './SortByTextField';

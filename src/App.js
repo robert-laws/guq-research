@@ -13,6 +13,7 @@ import {
   NotFound,
 } from './pages';
 import { CreatePublication, UpdatePublication } from './pages/admin';
+import { DisplayJSON } from './utilities';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
 
           {/* Search */}
           <Route path='/search' element={<Search />} />
+
+          {/* Utilities */}
+          <Route path='/json' element={<DisplayJSON />} />
 
           {/* Publications Refactor */}
           {/* <Route path='/publications-base' element={<PublicationsBase />} />

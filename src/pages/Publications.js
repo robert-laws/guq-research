@@ -568,7 +568,7 @@ export const Publications = () => {
                               : publication.title
                           }
                           sourceTitle={publication.sourceTitle}
-                          author={`${publication.firstName} ${publication.lastName}`}
+                          author={`${publication.lastName}, ${publication.firstName}`}
                           year={publication.year}
                           language={publication.language}
                           documentType={publication.documentType}
