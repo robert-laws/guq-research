@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { db } from '../firebase/firebase-config';
 import { addDoc, collection } from 'firebase/firestore';
-import allData from '../data/faculty-data-jan-31-2022.json';
+import allData from '../data/faculty-data-mar-6-2023.json';
 
 export const DataLoadPublications = () => {
   const [loading, setLoading] = useState(false);

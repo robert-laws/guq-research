@@ -9,7 +9,6 @@ import OrcidIcon from '../images/orcid.png';
 
 export const AuthorCard = ({
   id,
-  authorId,
   firstName,
   lastName,
   joinYear,
@@ -31,7 +30,7 @@ export const AuthorCard = ({
           <div className='flex items-center space-x-3 mb-1'>
             <h3 className='truncate text-md font-medium text-gray-900'>
               <Link
-                to={`/authors/${authorId}`}
+                to={`/authors/${id}`}
                 className='block hover:underline text-blue-700 font-medium'
               >
                 {lastName}, {firstName}

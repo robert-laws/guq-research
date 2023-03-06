@@ -5,6 +5,7 @@ import { Container, Heading, PublicationCard, Spinner } from '../components';
 import { AddToList, SortData } from '../utilities';
 import ReactPaginate from 'react-paginate';
 import PublicationsContext from '../context/publications/publicationsContext';
+import AuthorsContext from '../context/authors/authorsContext';
 import interactionsContext from '../context/interactions/interactionsContext';
 
 export const Publications = () => {
@@ -17,6 +18,9 @@ export const Publications = () => {
     filterPublications,
     resetSinglePublicationLoading,
   } = useContext(PublicationsContext);
+
+  const { resetSingleAuthorLoading, resetSingleAuthorPublicationsLoading } =
+    useContext(AuthorsContext);
 
   const {
     query,
@@ -336,6 +340,14 @@ export const Publications = () => {
   useEffect(() => {
     resetSinglePublicationLoading();
   }, [resetSinglePublicationLoading]);
+
+  useEffect(() => {
+    resetSingleAuthorLoading();
+  }, [resetSingleAuthorLoading]);
+
+  useEffect(() => {
+    resetSingleAuthorPublicationsLoading();
+  }, [resetSingleAuthorPublicationsLoading]);
 
   return (
     <Container>

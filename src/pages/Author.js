@@ -41,7 +41,7 @@ export const Author = () => {
 
   useEffect(() => {
     if (singleAuthor) {
-      getPublicationsByAuthorId(singleAuthor.authorId);
+      getPublicationsByAuthorId(singleAuthor.id);
     }
   }, [getPublicationsByAuthorId, singleAuthor]);
 
@@ -132,7 +132,7 @@ export const Author = () => {
                             : publication.title
                         }
                         sourceTitle={publication.sourceTitle}
-                        author={`${publication.firstName} ${publication.lastName}`}
+                        author={`${publication.lastName}, ${publication.firstName}`}
                         year={publication.year}
                         language={
                           publication.language === ''
