@@ -14,3 +14,6 @@ export { DisplayJSON } from './DisplayJSON';
 export { SortData } from './SortData';
 export { SortByTextField } from './SortByTextField';
 export { SortByNumberField } from './SortByNumberField';
+
+// Math
+export { GetRandomIntInclusive } from './GetRandomIntInclusive';

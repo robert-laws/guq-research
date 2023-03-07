@@ -12,7 +12,11 @@ import {
   Search,
   NotFound,
 } from './pages';
-import { CreatePublication, UpdatePublication } from './pages/admin';
+import {
+  CreatePublication,
+  UpdatePublication,
+  CreateAuthor,
+} from './pages/admin';
 import { DisplayJSON } from './utilities';
 
 function App() {
@@ -55,6 +59,7 @@ function App() {
           {/* Private Routes */}
           <Route path='/admin/new' element={<CreatePublication />} />
           <Route path='/admin/edit/:id' element={<UpdatePublication />} />
+          <Route path='/admin/author/new' element={<CreateAuthor />} />
 
           {/* 404 */}
           <Route path='*' element={<NotFound />} />
