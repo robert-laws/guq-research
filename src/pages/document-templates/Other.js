@@ -169,7 +169,7 @@ export const Other = ({
               </dd>
             </div>
           )}
-          {isbn.length > 0 && (
+          {isbn.length > 0 && isbn[0] !== '' && (
             <div className='py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5'>
               <dt className='text-sm font-medium text-gray-900 text-left md:text-right'>
                 ISBN
@@ -191,7 +191,7 @@ export const Other = ({
               </dd>
             </div>
           )}
-          {authorKeywords.length > 0 && (
+          {authorKeywords.length > 0 && authorKeywords[0] !== '' && (
             <div className='py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5'>
               <dt className='text-sm font-medium text-gray-900 text-left md:text-right'>
                 Author Keywords
@@ -203,7 +203,7 @@ export const Other = ({
               </dd>
             </div>
           )}
-          {indexKeywords.length > 0 && (
+          {indexKeywords.length > 0 && indexKeywords[0] !== '' && (
             <div className='py-4 sm:grid sm:grid-cols-6 sm:gap-4 sm:py-5'>
               <dt className='text-sm font-medium text-gray-900 text-left md:text-right'>
                 Index Keywords
