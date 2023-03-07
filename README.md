@@ -5,8 +5,8 @@ The GU-Q Research website compiles all the research that has been done by schola
 Phase 3 - To Do List
 
 - [ ] Work with Omair in IT to set up a georgetown.edu web address.
-- [ ] Add ways to create, edit, and delete author information
-- [ ] \*\*\* Link the publication content to the author content on the form pages
+- [x] Add ways to create, edit, and delete author information
+- [x] \*\*\* Link the publication content to the author content on the form pages
 - [ ] Add validation for the forms - to prevent bad data from being added to the database
 - [ ] Build the authentication feature for the website
 - [ ] Refine the colors, logo, and footer content
