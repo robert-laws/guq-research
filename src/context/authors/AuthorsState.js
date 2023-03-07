@@ -6,8 +6,10 @@ import {
   doc,
   addDoc,
   getDoc,
+  updateDoc,
   query,
   where,
+  deleteDoc,
 } from 'firebase/firestore';
 import {
   GET_ALL_AUTHORS,
@@ -19,6 +21,8 @@ import {
   AUTHOR_PUBLICATIONS_ERROR,
   RESET_SINGLE_AUTHOR_PUBLICATIONS_LOADING,
   CREATE_SINGLE_AUTHOR,
+  UPDATE_SINGLE_AUTHOR,
+  DELETE_SINGLE_AUTHOR,
 } from '../types';
 import AuthorsContext from './authorsContext';
 import authorsReducer from './authorsReducer';
@@ -167,6 +171,88 @@ const AuthorsState = ({ children }) => {
     [dispatch]
   );
 
+  const updateSingleAuthor = useCallback(
+    async (authorData) => {
+      const docId = authorData.id;
+      delete authorData.id;
+      const docRef = doc(db, 'authors', docId);
+
+      try {
+        const updatedAuthor = await updateDoc(docRef, authorData);
+
+        if (updatedAuthor.exists()) {
+          dispatch({
+            type: UPDATE_SINGLE_AUTHOR,
+            payload: { ...updatedAuthor.data(), id: updatedAuthor.id },
+          });
+        } else {
+          dispatch({
+            type: SINGLE_AUTHOR_ERROR,
+            payload: 'Error Updating Author',
+          });
+        }
+      } catch (error) {
+        dispatch({
+          type: SINGLE_AUTHOR_ERROR,
+          payload: `Database Error: ${error.message}`,
+        });
+      }
+    },
+    [dispatch]
+  );
+
+  const deletePublicationsByAuthorId = useCallback(
+    async (authorId) => {
+      const pubsRef = collection(db, 'authors');
+      const q = query(pubsRef, where('authorId', '==', authorId));
+
+      try {
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+          // do nothing
+        } else {
+          querySnapshot.forEach(async (doc) => {
+            await deleteDoc(doc.ref);
+          });
+
+          // dispatch({
+          //   type: DELETE_PUBLICATIONS_BY_AUTHOR_ID,
+          //   payload: authorId,
+          // });
+        }
+      } catch (error) {
+        dispatch({
+          type: AUTHOR_PUBLICATIONS_ERROR,
+          payload: `Database Error: ${error.message}`,
+        });
+      }
+    },
+    [dispatch]
+  );
+
+  const deleteSingleAuthor = useCallback(
+    async (authorId) => {
+      const docRef = doc(db, 'authors', authorId);
+
+      try {
+        await deleteDoc(docRef);
+        await deletePublicationsByAuthorId(authorId);
+
+        dispatch({
+          type: DELETE_SINGLE_AUTHOR,
+          payload: authorId,
+        });
+      } catch (error) {
+        dispatch({
+          type: SINGLE_AUTHOR_ERROR,
+          payload: `Database Error: ${error.message}`,
+        });
+      }
+    },
+    [dispatch, deletePublicationsByAuthorId]
+  );
+
   return (
     <AuthorsContext.Provider
       value={{
@@ -185,6 +271,8 @@ const AuthorsState = ({ children }) => {
         getPublicationsByAuthorId,
         resetSingleAuthorPublicationsLoading,
         createSingleAuthor,
+        updateSingleAuthor,
+        deleteSingleAuthor,
       }}
     >
       {children}

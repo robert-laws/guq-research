@@ -16,6 +16,7 @@ import {
   CreatePublication,
   UpdatePublication,
   CreateAuthor,
+  UpdateAuthor,
 } from './pages/admin';
 import { DisplayJSON } from './utilities';
 
@@ -60,6 +61,7 @@ function App() {
           <Route path='/admin/new' element={<CreatePublication />} />
           <Route path='/admin/edit/:id' element={<UpdatePublication />} />
           <Route path='/admin/author/new' element={<CreateAuthor />} />
+          <Route path='/admin/author/edit/:id' element={<UpdateAuthor />} />
 
           {/* 404 */}
           <Route path='*' element={<NotFound />} />

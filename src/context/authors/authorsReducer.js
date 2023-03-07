@@ -8,6 +8,8 @@ import {
   AUTHOR_PUBLICATIONS_ERROR,
   RESET_SINGLE_AUTHOR_PUBLICATIONS_LOADING,
   CREATE_SINGLE_AUTHOR,
+  UPDATE_SINGLE_AUTHOR,
+  DELETE_SINGLE_AUTHOR,
 } from '../types';
 
 const authorsReducer = (state, action) => {
@@ -77,6 +79,25 @@ const authorsReducer = (state, action) => {
         authors: [...state.authors, action.payload],
         isLoading: true,
         authorsError: null,
+      };
+
+    case UPDATE_SINGLE_AUTHOR:
+      return {
+        ...state,
+        isLoading: true,
+        isLoadingSingle: true,
+        authors: [...state.authors, action.payload],
+        authorsError: null,
+      };
+
+    case DELETE_SINGLE_AUTHOR:
+      return {
+        ...state,
+        isLoading: true,
+        isLoadingSingle: true,
+        authors: state.authors.filter(
+          (author) => author._id !== action.payload
+        ),
       };
 
     default:
