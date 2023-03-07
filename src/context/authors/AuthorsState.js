@@ -23,6 +23,7 @@ import {
   CREATE_SINGLE_AUTHOR,
   UPDATE_SINGLE_AUTHOR,
   DELETE_SINGLE_AUTHOR,
+  GET_ALL_AUTHOR_NAMES,
 } from '../types';
 import AuthorsContext from './authorsContext';
 import authorsReducer from './authorsReducer';
