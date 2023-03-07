@@ -36,10 +36,8 @@ export const CreateAuthor = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(newAuthor);
-    // const id = await createSingleAuthor(newAuthor);
-    // navigate(`/authors/${id}`);
+    const id = await createSingleAuthor(newAuthor);
+    navigate(`/authors/${id}`);
   };
 
   return (

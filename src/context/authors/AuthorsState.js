@@ -4,6 +4,7 @@ import {
   collection,
   getDocs,
   doc,
+  addDoc,
   getDoc,
   query,
   where,
@@ -17,6 +18,7 @@ import {
   GET_ALL_AUTHOR_PUBLICATIONS,
   AUTHOR_PUBLICATIONS_ERROR,
   RESET_SINGLE_AUTHOR_PUBLICATIONS_LOADING,
+  CREATE_SINGLE_AUTHOR,
 } from '../types';
 import AuthorsContext from './authorsContext';
 import authorsReducer from './authorsReducer';
@@ -140,6 +142,31 @@ const AuthorsState = ({ children }) => {
     });
   }, [dispatch]);
 
+  const createSingleAuthor = useCallback(
+    async (newAuthor) => {
+      const authorsRef = collection(db, 'authors');
+      let newDocId = '';
+
+      try {
+        const newDoc = await addDoc(authorsRef, newAuthor);
+        newDocId = newDoc.id;
+
+        dispatch({
+          type: CREATE_SINGLE_AUTHOR,
+          payload: { ...newAuthor, id: newDocId },
+        });
+      } catch (error) {
+        dispatch({
+          type: SINGLE_AUTHOR_ERROR,
+          payload: `Database Error: ${error.message}`,
+        });
+      }
+
+      return newDocId;
+    },
+    [dispatch]
+  );
+
   return (
     <AuthorsContext.Provider
       value={{
@@ -157,6 +184,7 @@ const AuthorsState = ({ children }) => {
         resetSingleAuthorLoading,
         getPublicationsByAuthorId,
         resetSingleAuthorPublicationsLoading,
+        createSingleAuthor,
       }}
     >
       {children}

@@ -13,7 +13,7 @@ export const Authors = () => {
   } = useContext(AuthorsContext);
 
   useEffect(() => {
-    if (authors.length === 0) {
+    if (authors.length <= 1) {
       getAllAuthors();
     }
   }, [authors, getAllAuthors]);

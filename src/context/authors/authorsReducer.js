@@ -7,6 +7,7 @@ import {
   GET_ALL_AUTHOR_PUBLICATIONS,
   AUTHOR_PUBLICATIONS_ERROR,
   RESET_SINGLE_AUTHOR_PUBLICATIONS_LOADING,
+  CREATE_SINGLE_AUTHOR,
 } from '../types';
 
 const authorsReducer = (state, action) => {
@@ -68,6 +69,14 @@ const authorsReducer = (state, action) => {
         ...state,
         isLoadingAuthorPublications: true,
         authorPublications: [],
+      };
+
+    case CREATE_SINGLE_AUTHOR:
+      return {
+        ...state,
+        authors: [...state.authors, action.payload],
+        isLoading: true,
+        authorsError: null,
       };
 
     default:
