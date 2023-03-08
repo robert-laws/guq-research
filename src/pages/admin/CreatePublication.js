@@ -106,7 +106,6 @@ export const CreatePublication = () => {
 
   const handleAuthorChange = (e) => {
     const author = authors.find((author) => author.id === e.target.value);
-    console.log(author);
 
     setNewPublication({
       ...newPublication,
@@ -190,7 +189,7 @@ export const CreatePublication = () => {
                   </button>
                 </div>
 
-                {/* <div className='sm:col-span-3'>
+                <div className='sm:col-span-3'>
                   <label
                     htmlFor='first-name'
                     className='block text-sm font-medium text-gray-700'
@@ -203,9 +202,10 @@ export const CreatePublication = () => {
                       name='firstName'
                       id='first-name'
                       placeholder='ex. Yousef'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                      onChange={(e) => handleTextChange(e)}
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300 disabled:bg-gray-100'
                       value={newPublication.firstName}
+                      readOnly
+                      disabled
                     />
                   </div>
                 </div>
@@ -223,12 +223,13 @@ export const CreatePublication = () => {
                       name='lastName'
                       id='last-name'
                       placeholder='ex. Haji'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                      onChange={(e) => handleTextChange(e)}
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300 disabled:bg-gray-100'
                       value={newPublication.lastName}
+                      readOnly
+                      disabled
                     />
                   </div>
-                </div> */}
+                </div>
 
                 <div className='sm:col-span-full'>
                   <label

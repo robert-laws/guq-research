@@ -111,11 +111,9 @@ export const UpdatePublication = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    updateSinglePublication(editedPublication);
-
+    await updateSinglePublication(editedPublication);
     navigate(`/publications/${id}`);
   };
 

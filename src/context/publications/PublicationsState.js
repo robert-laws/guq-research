@@ -160,23 +160,17 @@ const PublicationsState = ({ children }) => {
       const docRef = doc(db, 'publications', docId);
 
       try {
-        const updatedPublication = await updateDoc(docRef, publicationData);
+        await updateDoc(docRef, publicationData);
 
-        if (updatedPublication.exists()) {
-          dispatch({
-            type: UPDATE_SINGLE_PUBLICATION,
-            payload: {
-              ...updatedPublication.data(),
-              id: updatedPublication.id,
-            },
-          });
-        } else {
-          dispatch({
-            type: SINGLE_PUBLICATION_ERROR,
-            payload: 'Error Updating Publication',
-          });
-        }
+        dispatch({
+          type: UPDATE_SINGLE_PUBLICATION,
+          payload: {
+            ...publicationData,
+            id: docId,
+          },
+        });
       } catch (error) {
+        console.log(error);
         dispatch({
           type: SINGLE_PUBLICATION_ERROR,
           payload: `Database Error: ${error.message}`,

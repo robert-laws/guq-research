@@ -23,7 +23,6 @@ import {
   CREATE_SINGLE_AUTHOR,
   UPDATE_SINGLE_AUTHOR,
   DELETE_SINGLE_AUTHOR,
-  GET_ALL_AUTHOR_NAMES,
 } from '../types';
 import AuthorsContext from './authorsContext';
 import authorsReducer from './authorsReducer';
@@ -179,19 +178,12 @@ const AuthorsState = ({ children }) => {
       const docRef = doc(db, 'authors', docId);
 
       try {
-        const updatedAuthor = await updateDoc(docRef, authorData);
+        await updateDoc(docRef, authorData);
 
-        if (updatedAuthor.exists()) {
-          dispatch({
-            type: UPDATE_SINGLE_AUTHOR,
-            payload: { ...updatedAuthor.data(), id: updatedAuthor.id },
-          });
-        } else {
-          dispatch({
-            type: SINGLE_AUTHOR_ERROR,
-            payload: 'Error Updating Author',
-          });
-        }
+        dispatch({
+          type: UPDATE_SINGLE_AUTHOR,
+          payload: { ...authorData, id: docId },
+        });
       } catch (error) {
         dispatch({
           type: SINGLE_AUTHOR_ERROR,

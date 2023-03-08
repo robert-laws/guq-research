@@ -8,7 +8,6 @@ import {
   CREATE_SINGLE_PUBLICATION,
   UPDATE_SINGLE_PUBLICATION,
   DELETE_SINGLE_PUBLICATION,
-  SEARCH_QUERY,
 } from '../types';
 
 const publicationsReducer = (state, action) => {
@@ -76,6 +75,7 @@ const publicationsReducer = (state, action) => {
         filteredPublications: state.publications.map((publication) =>
           publication.id === action.payload.id ? action.payload : publication
         ),
+        singlePublicationError: null,
       };
 
     case DELETE_SINGLE_PUBLICATION:

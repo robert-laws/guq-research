@@ -10,7 +10,6 @@ import {
   CREATE_SINGLE_AUTHOR,
   UPDATE_SINGLE_AUTHOR,
   DELETE_SINGLE_AUTHOR,
-  GET_ALL_AUTHOR_NAMES,
 } from '../types';
 
 const authorsReducer = (state, action) => {
@@ -85,9 +84,10 @@ const authorsReducer = (state, action) => {
     case UPDATE_SINGLE_AUTHOR:
       return {
         ...state,
-        isLoading: true,
         isLoadingSingle: true,
-        authors: [...state.authors, action.payload],
+        authors: state.authors.map((author) =>
+          author.id === action.payload.id ? action.payload : author
+        ),
         authorsError: null,
       };
 
@@ -99,12 +99,6 @@ const authorsReducer = (state, action) => {
         authors: state.authors.filter(
           (author) => author._id !== action.payload
         ),
-      };
-
-    case GET_ALL_AUTHOR_NAMES:
-      return {
-        ...state,
-        allAuthorNames: action.payload,
       };
 
     default:
