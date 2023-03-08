@@ -571,7 +571,7 @@ export const Publications = () => {
                     {filteredPublications.length > 0 ? (
                       currentPublications.map((publication) => (
                         <PublicationCard
-                          key={publication.pubId}
+                          key={publication.id}
                           docId={publication.id}
                           authorId={publication.authorId}
                           title={

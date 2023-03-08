@@ -155,7 +155,7 @@ export const Author = () => {
                   <div className='grid grid-cols-1 gap-4 sm:grid-cols-1'>
                     {authorPublications.map((publication) => (
                       <PublicationCard
-                        key={publication.pubId}
+                        key={publication.id}
                         docId={publication.id}
                         authorId={publication.authorId}
                         title={
