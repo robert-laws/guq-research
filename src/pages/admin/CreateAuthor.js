@@ -1,11 +1,13 @@
 import { useState, useContext } from 'react';
-import { Heading, Container } from '../../components';
+import { Heading, Container, SpinnerButton } from '../../components';
 import AuthorsContext from '../../context/authors/authorsContext';
 import { useNavigate } from 'react-router-dom';
 import { GetRandomIntInclusive } from '../../utilities';
 
 export const CreateAuthor = () => {
   const navigate = useNavigate();
+
+  const [dataIsLoading, setDataIsLoading] = useState(false);
 
   const { createSingleAuthor } = useContext(AuthorsContext);
 
@@ -36,7 +38,9 @@ export const CreateAuthor = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDataIsLoading(true);
     const id = await createSingleAuthor(newAuthor);
+    setDataIsLoading(false);
     navigate(`/authors/${id}`);
   };
 
@@ -266,12 +270,7 @@ export const CreateAuthor = () => {
 
           <div className='pt-8'>
             <div className='flex justify-start'>
-              <button
-                type='submit'
-                className='mr-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
-              >
-                Save New Author
-              </button>
+              <SpinnerButton loading={dataIsLoading} />
               <button
                 type='button'
                 className='rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'

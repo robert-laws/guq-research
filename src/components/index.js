@@ -6,3 +6,4 @@ export { PublicationCard } from './PublicationCard';
 export { AuthorCard } from './AuthorCard';
 export { Spinner } from './Spinner';
 export { ResearchIcon } from './ResearchIcon';
+export { SpinnerButton } from './SpinnerButton';

@@ -1,11 +1,13 @@
 import { useState, useContext, useEffect } from 'react';
-import { Heading, Container } from '../../components';
+import { Heading, Container, SpinnerButton } from '../../components';
 import PublicationsContext from '../../context/publications/publicationsContext';
 import AuthorsContext from '../../context/authors/authorsContext';
 import { useNavigate } from 'react-router-dom';
 
 export const CreatePublication = () => {
   const navigate = useNavigate();
+
+  const [dataIsLoading, setDataIsLoading] = useState(false);
 
   const { createSinglePublication } = useContext(PublicationsContext);
   const { authors, getAllAuthors } = useContext(AuthorsContext);
@@ -117,11 +119,10 @@ export const CreatePublication = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setDataIsLoading(true);
     const docId = await createSinglePublication(newPublication);
-
+    setDataIsLoading(false);
     navigate(`/publications/${docId}`);
-    // navigate('/publications');
   };
 
   const handleAddNewAuthor = () => {
@@ -934,12 +935,7 @@ export const CreatePublication = () => {
 
           <div className='pt-5'>
             <div className='flex justify-start'>
-              <button
-                type='submit'
-                className='mr-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
-              >
-                Save New Publication
-              </button>
+              <SpinnerButton loading={dataIsLoading} />
               <button
                 type='button'
                 className='rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'

@@ -1,11 +1,13 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Heading, Container, Spinner } from '../../components';
+import { Heading, Container, Spinner, SpinnerButton } from '../../components';
 import AuthorsContext from '../../context/authors/authorsContext';
 
 export const UpdateAuthor = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+
+  const [dataIsLoading, setDataIsLoading] = useState(false);
 
   const {
     isLoadingSingle,
@@ -48,7 +50,9 @@ export const UpdateAuthor = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDataIsLoading(true);
     await updateSingleAuthor(editedAuthor);
+    setDataIsLoading(false);
     navigate(`/authors/${id}`);
   };
 
@@ -289,15 +293,10 @@ export const UpdateAuthor = () => {
 
                 <div className='pt-8'>
                   <div className='flex justify-start'>
-                    <button
-                      type='submit'
-                      className='mr-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
-                    >
-                      Update Author
-                    </button>
+                    <SpinnerButton loading={dataIsLoading} />
                     <button
                       type='button'
-                      className='rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                      className='rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
                       onClick={handleCancel}
                     >
                       Cancel
