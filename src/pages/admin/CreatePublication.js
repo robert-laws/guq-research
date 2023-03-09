@@ -180,13 +180,13 @@ export const CreatePublication = () => {
                     </select>
                   </div>
                 </div>
-                <div className='sm:col-span-2 flex'>
+                <div className='sm:col-span-2 flex justify-end'>
                   <button
                     type='button'
                     className='mr-3 inline-flex justify-center self-end rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
                     onClick={handleAddNewAuthor}
                   >
-                    Add New Author
+                    Author Not Listed? Add New
                   </button>
                 </div>
 
@@ -935,7 +935,7 @@ export const CreatePublication = () => {
 
           <div className='pt-5'>
             <div className='flex justify-start'>
-              <SpinnerButton loading={dataIsLoading} />
+              <SpinnerButton loading={dataIsLoading} buttonText='Create' />
               <button
                 type='button'
                 className='rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'

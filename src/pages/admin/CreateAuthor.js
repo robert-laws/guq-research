@@ -270,7 +270,7 @@ export const CreateAuthor = () => {
 
           <div className='pt-8'>
             <div className='flex justify-start'>
-              <SpinnerButton loading={dataIsLoading} />
+              <SpinnerButton loading={dataIsLoading} buttonText='Create' />
               <button
                 type='button'
                 className='rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
