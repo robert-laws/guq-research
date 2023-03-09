@@ -16,18 +16,24 @@ export const DataUpdateGlobal = () => {
   const dataCollectionUpdate = async () => {
     const pubsRef = collection(db, 'publications');
     try {
-      const q = query(pubsRef, where('publicationAffiliation', '==', 'GUQ'));
-      const querySnapshot = await getDocs(q);
+      // const q = query(pubsRef, where('publicationAffiliation', '==', 'GUQ'));
+      // const querySnapshot = await getDocs(q);
+      const querySnapshot = await getDocs(pubsRef);
       if (querySnapshot.empty) {
         console.log('No publications found');
       }
       querySnapshot.forEach((document) => {
-        const docId = document.id;
-        const docRef = doc(db, 'publications', docId);
-
-        updateDoc(docRef, {
-          publicationAffiliation: 'GU-Q',
-        });
+        if (document.data().doi === '') {
+          // console.log('No DOI...');
+        } else {
+          const docId = document.id;
+          const docRef = doc(db, 'publications', docId);
+          const doiData = document.data().doi;
+          // console.log('DOI - ', document.data().doi);
+          updateDoc(docRef, {
+            link: doiData,
+          });
+        }
       });
     } catch (error) {
       console.log(`Database Error: ${error.message}`);
