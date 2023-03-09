@@ -76,9 +76,8 @@ const authorsReducer = (state, action) => {
     case CREATE_SINGLE_AUTHOR:
       return {
         ...state,
+        isLoadingSingle: true,
         authors: [...state.authors, action.payload],
-        isLoading: true,
-        authorsError: null,
       };
 
     case UPDATE_SINGLE_AUTHOR:
