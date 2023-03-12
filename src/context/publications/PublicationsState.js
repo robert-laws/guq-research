@@ -23,7 +23,7 @@ import {
 } from '../types';
 import PublicationsContext from './publicationsContext';
 import publicationsReducer from './publicationsReducer';
-import { SortByTextField } from '../../utilities';
+import { SortByNumberField } from '../../utilities';
 // import data from '../../data/faculty-data-jan-31-2022.json';
 
 const PublicationsState = ({ children }) => {
@@ -56,7 +56,7 @@ const PublicationsState = ({ children }) => {
 
         dispatch({
           type: GET_ALL_PUBLICATIONS,
-          payload: SortByTextField(allPublications, 'lastName'),
+          payload: SortByNumberField(allPublications, 'year').reverse(),
         });
       }
     } catch (error) {

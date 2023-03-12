@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { db } from '../firebase/firebase-config';
 import { addDoc, collection } from 'firebase/firestore';
-import allData from '../data/faculty-data-mar-6-2023.json';
+import allData from '../data/current/additional.json';
 
 export const DataLoadPublications = () => {
   const [loading, setLoading] = useState(false);
@@ -12,8 +12,6 @@ export const DataLoadPublications = () => {
     await addDoc(collection(db, 'publications'), {
       pubId: dataFields.pubId,
       authorId: dataFields.authorId,
-      authorScopusId: dataFields.authorScopusId,
-      authorResearcherId: dataFields.authorResearcherId,
       lastName: dataFields.lastName,
       firstName: dataFields.firstName,
       authors: dataFields.authors,
@@ -24,7 +22,6 @@ export const DataLoadPublications = () => {
       issue: dataFields.issue,
       pageStart: dataFields.pageStart,
       pageEnd: dataFields.pageEnd,
-      pageCount: dataFields.pageCount,
       doi: dataFields.doi,
       link: dataFields.link,
       abstract: dataFields.abstract,
@@ -37,11 +34,8 @@ export const DataLoadPublications = () => {
       isbn: dataFields.isbn,
       language: dataFields.language,
       documentType: dataFields.documentType,
-      eid: dataFields.eid,
-      sustainableDevelopmentGoals: dataFields.sustainableDevelopmentGoals,
       callNumber: dataFields.callNumber,
       publicationAffiliation: dataFields.publicationAffiliation,
-      cirsSponsored: dataFields.cirsSponsored,
       publishingGroup: dataFields.publishingGroup,
     });
   };

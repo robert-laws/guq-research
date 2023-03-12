@@ -539,10 +539,10 @@ export const Publications = () => {
                                 });
                               }}
                             >
-                              <option value='author'>Author</option>
-                              <option value='title'>Title</option>
                               <option value='year-newest'>Year - Newest</option>
                               <option value='year-oldest'>Year - Oldest</option>
+                              <option value='author'>Author</option>
+                              <option value='title'>Title</option>
                             </select>
                           </div>
                         )}

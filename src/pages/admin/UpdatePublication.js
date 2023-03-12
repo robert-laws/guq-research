@@ -21,8 +21,6 @@ export const UpdatePublication = () => {
     pubId: '',
     firstName: '',
     lastName: '',
-    authorScopusId: '',
-    authorResearcherId: '',
     authors: [''],
     title: '',
     sourceTitle: '',
@@ -33,7 +31,6 @@ export const UpdatePublication = () => {
     issue: '',
     pageStart: '',
     pageEnd: '',
-    pageCount: '',
     doi: '',
     link: '',
     abstract: '',
@@ -44,11 +41,8 @@ export const UpdatePublication = () => {
     publisher: '',
     issn: '',
     isbn: [''],
-    eid: '',
     callNumber: '',
-    sustainableDevelopmentGoals: [''],
     publicationAffiliation: '',
-    cirsSponsored: '',
     publishingGroup: '',
   });
 
@@ -87,7 +81,7 @@ export const UpdatePublication = () => {
   const publishingGroupTypes = [
     'CIRS Staff',
     'Faculty',
-    'Visiting Faculty',
+    'Visiting Faculty/Scholar',
     'Postdoc',
     'Student',
     'Staff',
@@ -97,8 +91,8 @@ export const UpdatePublication = () => {
   const publicationAffiliationTypes = [
     'GU-Q',
     'GU-Main Campus',
-    'Other',
-    'None',
+    'Other Institutions',
+    'No Affiliation',
   ];
 
   const handleTextChange = (e) => {
@@ -311,29 +305,6 @@ export const UpdatePublication = () => {
                         </div>
                       </div>
 
-                      {/* <div className='sm:col-span-1'>
-                <label
-                  htmlFor='year'
-                  className='block text-sm font-medium text-gray-700'
-                >
-                  Publication Year
-                </label>
-                <div className='mt-1'>
-                  <select
-                    id='year'
-                    name='year'
-                    autoComplete='year-number'
-                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
-                  >
-                    {Array.from({ length: 50 }, (_, i) => (
-                      <option key={i} value={i + 1990}>
-                        {i + 1990}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div> */}
-
                       <div className='sm:col-span-1'>
                         <label
                           htmlFor='year'
@@ -434,26 +405,6 @@ export const UpdatePublication = () => {
                         </div>
                       </div>
 
-                      <div className='sm:col-span-1'>
-                        <label
-                          htmlFor='pageCount'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          Page Count
-                        </label>
-                        <div className='mt-1'>
-                          <input
-                            id='pageCount'
-                            name='pageCount'
-                            type='text'
-                            placeholder='ex. 24'
-                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                            onChange={(e) => handleTextChange(e)}
-                            value={editedPublication.pageCount}
-                          />
-                        </div>
-                      </div>
-
                       <div className='sm:col-span-3'>
                         <label
                           htmlFor='doi'
@@ -479,7 +430,7 @@ export const UpdatePublication = () => {
                           htmlFor='link'
                           className='block text-sm font-medium text-gray-700'
                         >
-                          Permanent Link
+                          Permanent Link (if a DOI is not available)
                         </label>
                         <div className='mt-1'>
                           <input
@@ -691,120 +642,6 @@ export const UpdatePublication = () => {
                         </div>
                       </div>
 
-                      <div className='sm:col-span-2'>
-                        <label
-                          htmlFor='authorScopusId'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          Author Scopus ID
-                        </label>
-                        <div className='mt-1'>
-                          <input
-                            id='authorScopusId'
-                            name='authorScopusId'
-                            type='text'
-                            placeholder='ex. 7004210000'
-                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                            onChange={(e) => handleTextChange(e)}
-                            value={editedPublication.authorScopusId}
-                          />
-                        </div>
-                      </div>
-
-                      <div className='sm:col-span-2'>
-                        <label
-                          htmlFor='authorResearcherId'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          WoS ResearcherID
-                        </label>
-                        <div className='mt-1'>
-                          <input
-                            id='authorResearcherId'
-                            name='authorResearcherId'
-                            type='text'
-                            placeholder='ex. 0-7315-2104'
-                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                            onChange={(e) => handleTextChange(e)}
-                            value={editedPublication.authorResearcherId}
-                          />
-                        </div>
-                      </div>
-
-                      <div className='sm:col-span-2'>
-                        <label
-                          htmlFor='eid'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          Scopus EID
-                        </label>
-                        <div className='mt-1'>
-                          <input
-                            id='eid'
-                            name='eid'
-                            type='text'
-                            placeholder='ex. 2-s2.0-84881394200'
-                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                            onChange={(e) => handleTextChange(e)}
-                            value={editedPublication.eid}
-                          />
-                        </div>
-                      </div>
-
-                      <div className='sm:col-span-3'>
-                        <label
-                          htmlFor='sustainableDevelopmentGoals'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          Sustainable Development Goals
-                        </label>
-                        <div className='mt-1'>
-                          <input
-                            id='sustainableDevelopmentGoals'
-                            name='sustainableDevelopmentGoals'
-                            type='text'
-                            placeholder='SDG 6; SDG 8; SDG 13'
-                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                            onChange={(e) => handleArrayChange(e)}
-                            value={editedPublication.sustainableDevelopmentGoals.join(
-                              ';'
-                            )}
-                          />
-                        </div>
-                        <p className='mt-2 text-sm text-gray-500'>
-                          Separate sustainable development goals with a
-                          semicolon.
-                        </p>
-                      </div>
-
-                      <div className='sm:col-span-1'>
-                        <label
-                          htmlFor='cirsSponsored'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          CIRS Sponsored
-                        </label>
-                        <div className='mt-1'>
-                          <select
-                            id='cirsSponsored'
-                            name='cirsSponsored'
-                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
-                            onChange={(e) => handleTextChange(e)}
-                            value={editedPublication.cirsSponsored}
-                          >
-                            <option key='Select' value=''>
-                              Select...
-                            </option>
-                            <option key='Yes' value='Yes'>
-                              Yes
-                            </option>
-                            <option key='No' value='No'>
-                              No
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-
                       <div className='sm:col-span-1'>
                         <label
                           htmlFor='publicationAffiliation'
@@ -866,33 +703,6 @@ export const UpdatePublication = () => {
                           </select>
                         </div>
                       </div>
-
-                      {/* <div className='sm:col-span-2'>
-                    <label
-                      htmlFor='fullText'
-                      className='block text-sm font-medium text-gray-700'
-                    >
-                      Full Text File Upload
-                    </label>
-                    <div className='mt-1 flex items-center'>
-                      <div className='mt-1'>
-                        <input
-                          id='fullText'
-                          name='fullText'
-                          type='text'
-                          placeholder='ex. document.pdf'
-                          disabled
-                          className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300 bg-slate-50'
-                        />
-                      </div>
-                      <button
-                        type='button'
-                        className='ml-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-                      >
-                        Upload
-                      </button>
-                    </div>
-                  </div> */}
                     </div>
                   </div>
                 </div>
