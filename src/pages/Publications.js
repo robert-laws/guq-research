@@ -227,7 +227,12 @@ export const Publications = () => {
         return [key, list[key]];
       });
 
-      if (property === 'documentType' || property === 'publishingGroup') {
+      if (
+        property === 'documentType' ||
+        property === 'publishingGroup' ||
+        property === 'publicationAffiliation' ||
+        property === 'language'
+      ) {
         myList.sort((a, b) => b[1] - a[1]);
       }
 
