@@ -1,7 +1,20 @@
-import { useState } from 'react';
-import { Container } from '../components';
+import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useLogin } from '../hooks';
+import { Container, SpinnerButton } from '../components';
+import AuthContext from '../context/auth/authContext';
 
 export const Login = () => {
+  const { login, loginError, isLoginPending } = useLogin();
+  const { authenticatedUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (authenticatedUser) {
+      navigate('/');
+    }
+  }, [authenticatedUser, navigate]);
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
@@ -11,10 +24,9 @@ export const Login = () => {
     e.preventDefault();
 
     if (credentials.email === '' || credentials.password === '') {
-      console.log('Please fill in all fields');
       return;
     } else {
-      console.log('submitted');
+      login(credentials.email, credentials.password);
     }
   };
 
@@ -72,12 +84,10 @@ export const Login = () => {
               </div>
 
               <div className='pt-2'>
-                <button
-                  type='submit'
-                  className='flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                >
-                  Sign in
-                </button>
+                <SpinnerButton loading={isLoginPending} buttonText='Login' />
+                {loginError && (
+                  <p className='text-red-500 text-center mt-2'>{loginError}</p>
+                )}
               </div>
             </form>
           </div>

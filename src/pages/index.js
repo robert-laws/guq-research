@@ -21,6 +21,9 @@ export { PublicationsUnifiedTwo } from './PublicationsUnifiedTwo';
 // Login
 export { Login } from './Login';
 
+// User
+export { Profile } from './Profile';
+
 // 404
 export { NotFound } from './NotFound';
 

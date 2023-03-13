@@ -8,7 +8,7 @@ const auth = getAuth();
 
 const AuthState = ({ children }) => {
   const initialState = {
-    user: null,
+    authenticatedUser: null,
     authIsReady: false,
   };
 
@@ -28,7 +28,7 @@ const AuthState = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-        user: state.user,
+        authenticatedUser: state.authenticatedUser,
         authIsReady: state.authIsReady,
       }}
     >

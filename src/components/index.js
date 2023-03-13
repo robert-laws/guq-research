@@ -7,3 +7,4 @@ export { AuthorCard } from './AuthorCard';
 export { Spinner } from './Spinner';
 export { ResearchIcon } from './ResearchIcon';
 export { SpinnerButton } from './SpinnerButton';
+export { PrivateRoute } from './PrivateRoute';

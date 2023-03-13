@@ -1,8 +1,13 @@
-import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../images/book.svg';
+import AuthContext from '../context/auth/authContext';
+import { useLogout } from '../hooks';
 
 export const Navigation = () => {
+  const { authenticatedUser } = useContext(AuthContext);
+  const { logout } = useLogout();
+
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Publications', href: '/publications' },
@@ -39,12 +44,27 @@ export const Navigation = () => {
             </div>
           </div>
           <div className='ml-10 space-x-4'>
-            {/* <Link
-              to='/login'
-              className='inline-block rounded-md border border-transparent bg-cyan-700 py-2 px-3 text-base font-medium text-white hover:bg-cyan-50 hover:text-cyan-600'
-            >
-              Login
-            </Link> */}
+            {!authenticatedUser && (
+              <Link
+                to='/login'
+                className='inline-block rounded-md border border-transparent bg-cyan-700 py-2 px-3 text-base font-medium text-white hover:bg-cyan-50 hover:text-cyan-600'
+              >
+                Login
+              </Link>
+            )}
+            {authenticatedUser && (
+              <>
+                <span className='text-white'>
+                  Welcome, {authenticatedUser.email}
+                </span>
+                <button
+                  onClick={logout}
+                  className='inline-block rounded-md border border-transparent bg-cyan-700 py-2 px-3 text-base font-medium text-white hover:bg-cyan-50 hover:text-cyan-600'
+                >
+                  Logout
+                </button>
+              </>
+            )}
           </div>
         </div>
         <div className='flex flex-wrap justify-center space-x-6 py-4 lg:hidden'>

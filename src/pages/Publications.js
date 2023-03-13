@@ -7,8 +7,11 @@ import ReactPaginate from 'react-paginate';
 import PublicationsContext from '../context/publications/publicationsContext';
 import AuthorsContext from '../context/authors/authorsContext';
 import interactionsContext from '../context/interactions/interactionsContext';
+import AuthContext from '../context/auth/authContext';
 
 export const Publications = () => {
+  const { authenticatedUser } = useContext(AuthContext);
+
   const {
     publications,
     filteredPublications,
@@ -358,12 +361,14 @@ export const Publications = () => {
     <Container>
       <div className='flex justify-between'>
         <Heading>Publications</Heading>
-        <Link
-          to='/admin/new'
-          className='block w-auto rounded-md border border-transparent bg-cyan-500 px-1 py-1 text-base font-medium text-white shadow hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-0 sm:px-4'
-        >
-          Add New Publication
-        </Link>
+        {authenticatedUser && (
+          <Link
+            to='/admin/new'
+            className='block w-auto rounded-md border border-transparent bg-cyan-500 px-1 py-1 text-base font-medium text-white shadow hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-0 sm:px-4'
+          >
+            Add New Publication
+          </Link>
+        )}
       </div>
 
       {isLoading && !publicationsError ? (

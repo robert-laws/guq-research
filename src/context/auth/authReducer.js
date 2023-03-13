@@ -4,7 +4,7 @@ const authReducer = (state, action) => {
   switch (action.type) {
     case UPDATE_AUTH:
       return {
-        user: action.payload,
+        authenticatedUser: action.payload,
         authIsReady: true,
       };
 

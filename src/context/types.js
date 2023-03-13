@@ -38,3 +38,8 @@ export const SEARCH_RESULTS = 'SEARCH_RESULTS';
 
 // Authentication
 export const UPDATE_AUTH = 'UPDATE_AUTH';
+
+// Users
+export const GET_USER_BY_UID = 'GET_USER_BY_UID';
+export const CLEAR_USER = 'CLEAR_USER';
+export const USER_ERROR = 'USER_ERROR';

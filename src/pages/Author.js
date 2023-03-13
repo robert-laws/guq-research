@@ -14,10 +14,13 @@ import GU360Icon from '../images/gu-360.png';
 import ResearchGateIcon from '../images/research-gate.png';
 import OrcidIcon from '../images/orcid.png';
 import AuthorsContext from '../context/authors/authorsContext';
+import AuthContext from '../context/auth/authContext';
 
 export const Author = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const { authenticatedUser } = useContext(AuthContext);
 
   const {
     singleAuthor,
@@ -69,22 +72,24 @@ export const Author = () => {
         </div>
       ) : singleAuthor ? (
         <div className='px-4 py-5 sm:px-6'>
-          <div className='flex justify-end mt-4'>
-            <button
-              type='button'
-              className='inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-              onClick={handleEditClick}
-            >
-              Edit this Author
-            </button>
-            <button
-              type='button'
-              className='inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ml-4'
-              onClick={handleDeleteClick}
-            >
-              Delete this Author
-            </button>
-          </div>
+          {authenticatedUser && (
+            <div className='flex justify-end mt-4'>
+              <button
+                type='button'
+                className='inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                onClick={handleEditClick}
+              >
+                Edit this Author
+              </button>
+              <button
+                type='button'
+                className='inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ml-4'
+                onClick={handleDeleteClick}
+              >
+                Delete this Author
+              </button>
+            </div>
+          )}
           <div className='mb-4 flex flex-col'>
             <Heading>
               {`${singleAuthor.firstName} ${singleAuthor.lastName}`}
