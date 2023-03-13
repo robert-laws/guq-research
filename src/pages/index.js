@@ -18,6 +18,9 @@ export { PublicationsSearch } from './PublicationsSearch';
 export { PublicationsUnified } from './PublicationsUnified';
 export { PublicationsUnifiedTwo } from './PublicationsUnifiedTwo';
 
+// Login
+export { Login } from './Login';
+
 // 404
 export { NotFound } from './NotFound';
 

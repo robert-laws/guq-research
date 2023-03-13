@@ -58,6 +58,7 @@ export const CreatePublication = () => {
     'Conference Paper',
     'Editorial',
     'Edited Book',
+    'Edited Journal Issue',
     'Journal Article',
     'Research Paper',
     'Other Document Type',

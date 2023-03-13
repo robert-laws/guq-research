@@ -10,6 +10,7 @@ import {
   Authors,
   Author,
   Search,
+  Login,
   NotFound,
 } from './pages';
 import {
@@ -56,6 +57,9 @@ function App() {
             path='/publications-unified-2'
             element={<PublicationsUnifiedTwo />}
           /> */}
+
+          {/* Login */}
+          <Route path='/login' element={<Login />} />
 
           {/* Private Routes */}
           <Route path='/admin/new' element={<CreatePublication />} />
