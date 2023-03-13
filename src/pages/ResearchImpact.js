@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Heading, Container } from '../components';
 import ReportSDG from '../reports/GUQ-Research-SDGs.pptx';
+import MapCitations from '../reports/MapCitations.pdf';
 
 export const ResearchImpact = () => {
   return (
@@ -22,14 +23,14 @@ export const ResearchImpact = () => {
           </li>
           <li>
             Citations to GU-Q research by country (chart,{' '}
-            <a
-              href='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1pnDgIW0e9I_QZTyuUYE7YYjZmDMyGwkL'
+            <Link
+              to={MapCitations}
               target='_blank'
-              rel='noreferrer'
+              download='MapCitations.pdf'
               className='hover:underline text-blue-700'
             >
               map
-            </a>
+            </Link>
             )
           </li>
           <li>
