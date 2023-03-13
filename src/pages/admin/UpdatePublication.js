@@ -713,6 +713,7 @@ export const UpdatePublication = () => {
                     <SpinnerButton
                       loading={dataIsLoading}
                       buttonText='Update'
+                      buttonActionText='Saving...'
                     />
                     <button
                       type='button'

@@ -296,6 +296,7 @@ export const UpdateAuthor = () => {
                     <SpinnerButton
                       loading={dataIsLoading}
                       buttonText='Update'
+                      buttonActionText='Saving...'
                     />
                     <button
                       type='button'

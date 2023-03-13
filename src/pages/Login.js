@@ -84,7 +84,11 @@ export const Login = () => {
               </div>
 
               <div className='pt-2'>
-                <SpinnerButton loading={isLoginPending} buttonText='Login' />
+                <SpinnerButton
+                  loading={isLoginPending}
+                  buttonText='Login'
+                  buttonActionText='Logging in...'
+                />
                 {loginError && (
                   <p className='text-red-500 text-center mt-2'>{loginError}</p>
                 )}
