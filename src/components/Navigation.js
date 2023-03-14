@@ -54,7 +54,11 @@ export const Navigation = () => {
             {authenticatedUser && (
               <>
                 <span className='text-white'>
-                  Welcome, {authenticatedUser.email}
+                  Welcome,{' '}
+                  {authenticatedUser.email.substring(
+                    0,
+                    authenticatedUser.email.indexOf('@')
+                  )}
                 </span>
                 <button
                   onClick={logout}

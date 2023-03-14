@@ -23,15 +23,12 @@ export const DataUpdateGlobal = () => {
         console.log('No publications found');
       }
       querySnapshot.forEach((document) => {
-        if (document.data().doi === '') {
-          // console.log('No DOI...');
-        } else {
+        if (document.data().doi !== '') {
           const docId = document.id;
           const docRef = doc(db, 'publications', docId);
-          const doiData = document.data().doi;
           // console.log('DOI - ', document.data().doi);
           updateDoc(docRef, {
-            link: doiData,
+            link: '',
           });
         }
       });

@@ -20,6 +20,14 @@ export const Contact = () => {
             phone: + 974 4457 8493
             <br />
             mobile: + 974 5542 0190
+            <br />
+            email:{' '}
+            <a
+              className='hover:underline text-blue-700'
+              href='mailto:lm1470@georgetown.edu'
+            >
+              lm1470@georgetown.edu
+            </a>
           </p>
         </div>
         <div className='max-w-prose text-lg border-t border-gray-200'>
@@ -29,11 +37,19 @@ export const Contact = () => {
           <p>
             <strong>Robert Laws</strong>
             <br />
-            ​Data, Web, and Media Services Librarian
+            Data, Web, and Media Services Librarian
             <br />
             Education City | P.O. Box 23689 | Doha, Qatar
             <br />
             phone: + 974 4457 8315
+            <br />
+            email:{' '}
+            <a
+              className='hover:underline text-blue-700'
+              href='mailto:rdl27@georgetown.edu'
+            >
+              rdl27@georgetown.edu
+            </a>
           </p>
         </div>
       </main>

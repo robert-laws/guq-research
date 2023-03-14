@@ -33,30 +33,6 @@ export const ResearchImpact = () => {
             </Link>
             )
           </li>
-          <li>
-            Citations to GU-Q research by institution (chart,{' '}
-            <a
-              href='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1Cqo1fitkqCJl_XYLu3e6wsDYsdXJZUir'
-              target='_blank'
-              rel='noreferrer'
-              className='hover:underline text-blue-700'
-            >
-              map
-            </a>
-            )
-          </li>
-          <li>
-            GUQ-United Nations Sustainable Development Goals (
-            <Link
-              to={ReportSDG}
-              target='_blank'
-              download='GUQ-Research-SDGs.pptx'
-              className='hover:underline text-blue-700'
-            >
-              chart
-            </Link>
-            )
-          </li>
         </ul>
       </main>
     </Container>

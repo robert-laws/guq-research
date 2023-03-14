@@ -122,8 +122,8 @@ export const SignUp = () => {
               <div className='pt-2'>
                 <SpinnerButton
                   loading={isSignupPending}
-                  buttonText='Login'
-                  buttonActionText='Logging in...'
+                  buttonText='Confirm'
+                  buttonActionText='Signing up...'
                 />
                 {signupError && (
                   <p className='text-red-500 text-center mt-2'>{signupError}</p>
