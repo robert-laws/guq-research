@@ -13,6 +13,7 @@ import {
   Search,
   Profile,
   Login,
+  SignUp,
   NotFound,
 } from './pages';
 import {
@@ -52,6 +53,7 @@ function App() {
 
             {/* Login */}
             <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<SignUp />} />
 
             {/* Private Routes */}
             <Route

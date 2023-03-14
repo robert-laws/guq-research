@@ -8,7 +8,7 @@ Phase 3 - To Do List
 - [x] Add ways to create, edit, and delete author information
 - [x] \*\*\* Link the publication content to the author content on the form pages
 - [ ] Add validation for the forms - to prevent bad data from being added to the database
-- [ ] Build the authentication feature for the website
+- [x] Build the authentication feature for the website
 - [ ] Refine the colors, logo, and footer content
 - [ ] Work on accessibility features
 - [ ] Work on all necessary documentation (e.g., what is included/excluded in the database; how the publication data were collected; what sources were used to collect the publication data; who the alternative contact persons are; procedure for keeping the database up-to-date; and so on) Lokman

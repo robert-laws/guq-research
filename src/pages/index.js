@@ -18,7 +18,8 @@ export { PublicationsSearch } from './PublicationsSearch';
 export { PublicationsUnified } from './PublicationsUnified';
 export { PublicationsUnifiedTwo } from './PublicationsUnifiedTwo';
 
-// Login
+// SignUp and Login
+export { SignUp } from './SignUp';
 export { Login } from './Login';
 
 // User
