@@ -5,8 +5,8 @@ export const Footer = () => {
     { name: 'Home', href: '/' },
     { name: 'Publications', href: '/publications' },
     { name: 'Authors', href: '/authors' },
-    { name: 'Annual Reports', href: '/annual-reports' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Login', href: '/login' },
   ];
 
   return (

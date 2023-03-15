@@ -1,21 +1,30 @@
-import { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Menu, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Logo from '../images/book.svg';
 import AuthContext from '../context/auth/authContext';
 import { useLogout } from '../hooks';
+import Report2020 from '../reports/GUQ-Research-2020.pdf';
+import MapCitations from '../reports/MapCitations.pdf';
 
 export const Navigation = () => {
   const { authenticatedUser } = useContext(AuthContext);
   const { logout } = useLogout();
 
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ');
+  }
+
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Publications', href: '/publications' },
     { name: 'Authors', href: '/authors' },
-    { name: 'Annual Reports', href: '/annual-reports' },
-    { name: 'Research Impact', href: '/research-impact' },
-    { name: 'Contact', href: '/contact' },
   ];
+
+  // { name: 'Annual Reports', href: '/annual-reports' },
+  // { name: 'Research Impact', href: '/research-impact' },
+  // { name: 'Contact', href: '/contact' },
 
   return (
     <header className=' bg-cyan-900'>
@@ -40,6 +49,150 @@ export const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
+              <Menu
+                as='div'
+                className='sm:relative inline-block text-left ml-8'
+              >
+                <div>
+                  <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-medium text-white hover:bg-transparent'>
+                    Annual Reports
+                    {/* <ChevronDownIcon
+                      className='-mr-1 h-5 w-5 text-gray-400'
+                      aria-hidden='true'
+                    /> */}
+                  </Menu.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter='transition ease-out duration-100'
+                  enterFrom='transform opacity-0 scale-95'
+                  enterTo='transform opacity-100 scale-100'
+                  leave='transition ease-in duration-75'
+                  leaveFrom='transform opacity-100 scale-100'
+                  leaveTo='transform opacity-0 scale-95'
+                >
+                  <Menu.Items className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                    <div className='py-1'>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to={Report2020}
+                            target='_blank'
+                            download='GUQ-Research-2020.pdf'
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            2022 Annual Report (PDF)
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to={Report2020}
+                            target='_blank'
+                            download='GUQ-Research-2020.pdf'
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            2021 Annual Report (PDF)
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to={Report2020}
+                            target='_blank'
+                            download='GUQ-Research-2020.pdf'
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            2020 Annual Report (PDF)
+                          </Link>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+
+              <Menu
+                as='div'
+                className='sm:relative inline-block text-left ml-8'
+              >
+                <div>
+                  <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-medium text-white hover:bg-transparent'>
+                    Research Impact
+                    {/* <ChevronDownIcon
+                      className='-mr-1 h-5 w-5 text-gray-400'
+                      aria-hidden='true'
+                    /> */}
+                  </Menu.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter='transition ease-out duration-100'
+                  enterFrom='transform opacity-0 scale-95'
+                  enterTo='transform opacity-100 scale-100'
+                  leave='transition ease-in duration-75'
+                  leaveFrom='transform opacity-100 scale-100'
+                  leaveTo='transform opacity-0 scale-95'
+                >
+                  <Menu.Items className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                    <div className='py-1'>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1DHkas86637cEVp9JLVvUN4nhiV8hj1l4'
+                            target='_blank'
+                            rel='noreferrer'
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            Research Areas/Strengths
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to={MapCitations}
+                            target='_blank'
+                            download='MapCitations.pdf'
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            Citations to GU-Q Research by Country
+                          </Link>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </div>
           </div>
           <div className='ml-10 space-x-4'>
@@ -70,7 +223,7 @@ export const Navigation = () => {
             )}
           </div>
         </div>
-        <div className='flex flex-wrap justify-center space-x-6 py-4 lg:hidden'>
+        <div className='flex flex-wrap justify-start space-x-6 py-4 lg:hidden'>
           {navigation.map((link) => (
             <a
               key={link.name}
@@ -80,6 +233,144 @@ export const Navigation = () => {
               {link.name}
             </a>
           ))}
+          <Menu as='div' className='sm:relative inline-block text-left ml-8'>
+            <div>
+              <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-semibold text-white hover:bg-transparent'>
+                Annual Reports
+                {/* <ChevronDownIcon
+                  className='-mr-1 h-5 w-5 text-gray-400'
+                  aria-hidden='true'
+                /> */}
+              </Menu.Button>
+            </div>
+
+            <Transition
+              as={Fragment}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-95'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-75'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-95'
+            >
+              <Menu.Items className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                <div className='py-1'>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to={Report2020}
+                        target='_blank'
+                        download='GUQ-Research-2020.pdf'
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        2022 Annual Report (PDF)
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to={Report2020}
+                        target='_blank'
+                        download='GUQ-Research-2020.pdf'
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        2021 Annual Report (PDF)
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to={Report2020}
+                        target='_blank'
+                        download='GUQ-Research-2020.pdf'
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        2020 Annual Report (PDF)
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+
+          <Menu as='div' className='sm:relative inline-block text-left ml-8'>
+            <div>
+              <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-semibold text-white hover:bg-transparent'>
+                Research Impact
+                {/* <ChevronDownIcon
+                  className='-mr-1 h-5 w-5 text-gray-400'
+                  aria-hidden='true'
+                /> */}
+              </Menu.Button>
+            </div>
+
+            <Transition
+              as={Fragment}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-95'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-75'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-95'
+            >
+              <Menu.Items className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                <div className='py-1'>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1DHkas86637cEVp9JLVvUN4nhiV8hj1l4'
+                        target='_blank'
+                        rel='noreferrer'
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        Research areas/strengths
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to={MapCitations}
+                        target='_blank'
+                        download='MapCitations.pdf'
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        Citations to GU-Q research by country
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
         </div>
       </nav>
     </header>

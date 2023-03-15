@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Heading, Container } from '../components';
-import ReportSDG from '../reports/GUQ-Research-SDGs.pptx';
 import MapCitations from '../reports/MapCitations.pdf';
 
 export const ResearchImpact = () => {
