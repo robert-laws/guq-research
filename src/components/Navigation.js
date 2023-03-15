@@ -1,7 +1,6 @@
 import { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Logo from '../images/book.svg';
 import AuthContext from '../context/auth/authContext';
 import { useLogout } from '../hooks';
