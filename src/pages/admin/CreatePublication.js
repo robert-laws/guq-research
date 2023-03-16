@@ -227,98 +227,69 @@ export const CreatePublication = () => {
                   </div>
                 </div>
 
-                <div className='sm:col-span-full'>
+                <div className='sm:col-span-2'>
                   <label
-                    htmlFor='authors'
+                    htmlFor='publicationAffiliation'
                     className='block text-sm font-medium text-gray-700'
                   >
-                    Authors
-                  </label>
-                  <div className='mt-1'>
-                    <input
-                      id='authors'
-                      name='authors'
-                      type='text'
-                      placeholder='ex. Habib, Mohamed; Smith, David'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                      onChange={(e) => handleArrayChange(e)}
-                      value={newPublication.authors.join(';')}
-                    />
-                  </div>
-                  <p className='mt-2 text-sm text-gray-500'>
-                    Separate authors (last name, first name) with a semicolon.
-                  </p>
-                </div>
-
-                <div className='sm:col-span-full'>
-                  <label
-                    htmlFor='title'
-                    className='block text-sm font-medium text-gray-700'
-                  >
-                    Title
-                  </label>
-                  <div className='mt-1'>
-                    <input
-                      id='title'
-                      name='title'
-                      type='text'
-                      placeholder='ex. The Impact of COVID-19 on the Global Economy'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                      onChange={(e) => handleTextChange(e)}
-                      value={newPublication.title}
-                    />
-                  </div>
-                </div>
-
-                <div className='sm:col-span-full'>
-                  <label
-                    htmlFor='sourceTitle'
-                    className='block text-sm font-medium text-gray-700'
-                  >
-                    Source Title
-                  </label>
-                  <div className='mt-1'>
-                    <input
-                      id='sourceTitle'
-                      name='sourceTitle'
-                      type='text'
-                      placeholder='ex. Journal of International Affairs'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
-                      onChange={(e) => handleTextChange(e)}
-                      value={newPublication.sourceTitle}
-                    />
-                  </div>
-                </div>
-
-                <div className='sm:col-span-3'>
-                  <label
-                    htmlFor='language'
-                    className='block text-sm font-medium text-gray-700'
-                  >
-                    Language
+                    Publication Affiliation
                   </label>
                   <div className='mt-1'>
                     <select
-                      id='language'
-                      name='language'
+                      id='publicationAffiliation'
+                      name='publicationAffiliation'
                       className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
                       onChange={(e) => handleTextChange(e)}
-                      value={newPublication.language}
+                      value={newPublication.publicationAffiliation}
                     >
-                      <option value=''>Select...</option>
-                      {languages.map((language) => (
-                        <option key={language} value={language}>
-                          {language}
+                      <option key='Select' value=''>
+                        Select...
+                      </option>
+                      {publicationAffiliationTypes.map(
+                        (publicationAffiliationType) => (
+                          <option
+                            key={publicationAffiliationType}
+                            value={publicationAffiliationType}
+                          >
+                            {publicationAffiliationType}
+                          </option>
+                        )
+                      )}
+                    </select>
+                  </div>
+                </div>
+
+                <div className='sm:col-span-2'>
+                  <label
+                    htmlFor='publishingGroup'
+                    className='block text-sm font-medium text-gray-700'
+                  >
+                    Publishing Group
+                  </label>
+                  <div className='mt-1'>
+                    <select
+                      id='publishingGroup'
+                      name='publishingGroup'
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                      onChange={(e) => handleTextChange(e)}
+                      value={newPublication.publishingGroup}
+                    >
+                      <option key='Select' value=''>
+                        Select...
+                      </option>
+                      {publishingGroupTypes.map((publishingGroupType) => (
+                        <option
+                          key={publishingGroupType}
+                          value={publishingGroupType}
+                        >
+                          {publishingGroupType}
                         </option>
                       ))}
                     </select>
                   </div>
-                  <p className='mt-2 text-sm text-gray-500'>
-                    Original language of the publication.
-                  </p>
                 </div>
 
-                <div className='sm:col-span-3'>
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='documentType'
                     className='block text-sm font-medium text-gray-700'
@@ -341,6 +312,69 @@ export const CreatePublication = () => {
                       ))}
                     </select>
                   </div>
+                </div>
+
+                <div className='sm:col-span-3'>
+                  <label
+                    htmlFor='title'
+                    className='block text-sm font-medium text-gray-700'
+                  >
+                    Title
+                  </label>
+                  <div className='mt-1'>
+                    <input
+                      id='title'
+                      name='title'
+                      type='text'
+                      placeholder='ex. The Impact of COVID-19 on the Global Economy'
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                      onChange={(e) => handleTextChange(e)}
+                      value={newPublication.title}
+                    />
+                  </div>
+                </div>
+
+                <div className='sm:col-span-3'>
+                  <label
+                    htmlFor='sourceTitle'
+                    className='block text-sm font-medium text-gray-700'
+                  >
+                    Source Title
+                  </label>
+                  <div className='mt-1'>
+                    <input
+                      id='sourceTitle'
+                      name='sourceTitle'
+                      type='text'
+                      placeholder='ex. Journal of International Affairs'
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                      onChange={(e) => handleTextChange(e)}
+                      value={newPublication.sourceTitle}
+                    />
+                  </div>
+                </div>
+
+                <div className='sm:col-span-3'>
+                  <label
+                    htmlFor='authors'
+                    className='block text-sm font-medium text-gray-700'
+                  >
+                    Authors
+                  </label>
+                  <div className='mt-1'>
+                    <input
+                      id='authors'
+                      name='authors'
+                      type='text'
+                      placeholder='ex. Habib, Mohamed; Smith, David'
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                      onChange={(e) => handleArrayChange(e)}
+                      value={newPublication.authors.join(';')}
+                    />
+                  </div>
+                  <p className='mt-2 text-sm text-gray-500'>
+                    Separate authors (last name, first name) with a semicolon.
+                  </p>
                 </div>
 
                 <div className='sm:col-span-1'>
@@ -443,7 +477,7 @@ export const CreatePublication = () => {
                   </div>
                 </div>
 
-                <div className='sm:col-span-3'>
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='doi'
                     className='block text-sm font-medium text-gray-700'
@@ -463,25 +497,32 @@ export const CreatePublication = () => {
                   </div>
                 </div>
 
-                <div className='sm:col-span-3'>
+                <div className='sm:col-span-2'>
                   <label
-                    htmlFor='link'
+                    htmlFor='language'
                     className='block text-sm font-medium text-gray-700'
                   >
-                    Permanent Link (if a DOI is not available)
+                    Language
                   </label>
                   <div className='mt-1'>
-                    <input
-                      type='text'
-                      name='link'
-                      id='link'
-                      placeholder='ex. https://www.webofscience.com/wos/woscc/full-record/WOS:000668817900007'
-                      autoComplete='address-level2'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                    <select
+                      id='language'
+                      name='language'
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
                       onChange={(e) => handleTextChange(e)}
-                      value={newPublication.link}
-                    />
+                      value={newPublication.language}
+                    >
+                      <option value=''>Select...</option>
+                      {languages.map((language) => (
+                        <option key={language} value={language}>
+                          {language}
+                        </option>
+                      ))}
+                    </select>
                   </div>
+                  <p className='mt-2 text-sm text-gray-500'>
+                    Original language of the publication.
+                  </p>
                 </div>
 
                 <div className='sm:col-span-full'>
@@ -531,7 +572,7 @@ export const CreatePublication = () => {
                   </p>
                 </div>
 
-                <div className='sm:col-span-full'>
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='authorKeywords'
                     className='block text-sm font-medium text-gray-700'
@@ -554,7 +595,7 @@ export const CreatePublication = () => {
                   </p>
                 </div>
 
-                <div className='sm:col-span-full'>
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='indexKeywords'
                     className='block text-sm font-medium text-gray-700'
@@ -577,7 +618,28 @@ export const CreatePublication = () => {
                   </p>
                 </div>
 
-                <div className='sm:col-span-full'>
+                <div className='sm:col-span-2'>
+                  <label
+                    htmlFor='link'
+                    className='block text-sm font-medium text-gray-700'
+                  >
+                    Permanent Link (if a DOI is not available)
+                  </label>
+                  <div className='mt-1'>
+                    <input
+                      type='text'
+                      name='link'
+                      id='link'
+                      placeholder='ex. https://www.webofscience.com/wos/woscc/full-record/WOS:000668817900007'
+                      autoComplete='address-level2'
+                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                      onChange={(e) => handleTextChange(e)}
+                      value={newPublication.link}
+                    />
+                  </div>
+                </div>
+
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='editors'
                     className='block text-sm font-medium text-gray-700'
@@ -620,7 +682,7 @@ export const CreatePublication = () => {
                   </div>
                 </div>
 
-                <div className='sm:col-span-1'>
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='issn'
                     className='block text-sm font-medium text-gray-700'
@@ -640,7 +702,7 @@ export const CreatePublication = () => {
                   </div>
                 </div>
 
-                <div className='sm:col-span-1'>
+                <div className='sm:col-span-2'>
                   <label
                     htmlFor='isbn'
                     className='block text-sm font-medium text-gray-700'
@@ -658,6 +720,9 @@ export const CreatePublication = () => {
                       value={newPublication.isbn.join(';')}
                     />
                   </div>
+                  <p className='mt-2 text-sm text-gray-500'>
+                    Separate ISBNs with a semicolon.
+                  </p>
                 </div>
 
                 <div className='sm:col-span-2'>
@@ -677,68 +742,6 @@ export const CreatePublication = () => {
                       onChange={(e) => handleTextChange(e)}
                       value={newPublication.callNumber}
                     />
-                  </div>
-                </div>
-
-                <div className='sm:col-span-1'>
-                  <label
-                    htmlFor='publicationAffiliation'
-                    className='block text-sm font-medium text-gray-700'
-                  >
-                    Publication Affiliation
-                  </label>
-                  <div className='mt-1'>
-                    <select
-                      id='publicationAffiliation'
-                      name='publicationAffiliation'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
-                      onChange={(e) => handleTextChange(e)}
-                      value={newPublication.publicationAffiliation}
-                    >
-                      <option key='Select' value=''>
-                        Select...
-                      </option>
-                      {publicationAffiliationTypes.map(
-                        (publicationAffiliationType) => (
-                          <option
-                            key={publicationAffiliationType}
-                            value={publicationAffiliationType}
-                          >
-                            {publicationAffiliationType}
-                          </option>
-                        )
-                      )}
-                    </select>
-                  </div>
-                </div>
-
-                <div className='sm:col-span-1'>
-                  <label
-                    htmlFor='publishingGroup'
-                    className='block text-sm font-medium text-gray-700'
-                  >
-                    Publishing Group
-                  </label>
-                  <div className='mt-1'>
-                    <select
-                      id='publishingGroup'
-                      name='publishingGroup'
-                      className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
-                      onChange={(e) => handleTextChange(e)}
-                      value={newPublication.publishingGroup}
-                    >
-                      <option key='Select' value=''>
-                        Select...
-                      </option>
-                      {publishingGroupTypes.map((publishingGroupType) => (
-                        <option
-                          key={publishingGroupType}
-                          value={publishingGroupType}
-                        >
-                          {publishingGroupType}
-                        </option>
-                      ))}
-                    </select>
                   </div>
                 </div>
               </div>
