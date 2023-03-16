@@ -363,7 +363,7 @@ export const Publications = () => {
         <Heading>Publications</Heading>
         {authenticatedUser && (
           <Link
-            to='/admin/new'
+            to='/admin/publication/new'
             className='block w-auto rounded-md border border-transparent bg-cyan-500 px-1 py-1 text-base font-medium text-white shadow hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-0 sm:px-4'
           >
             Add New Publication

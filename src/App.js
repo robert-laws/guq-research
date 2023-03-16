@@ -57,7 +57,7 @@ function App() {
 
             {/* Private Routes */}
             <Route
-              path='/admin/new'
+              path='/admin/publication/new'
               element={
                 <PrivateRoute user={authenticatedUser}>
                   <CreatePublication />
@@ -66,7 +66,7 @@ function App() {
             />
 
             <Route
-              path='/admin/edit/:id'
+              path='/admin/publication/edit/:id'
               element={
                 <PrivateRoute user={authenticatedUser}>
                   <UpdatePublication />

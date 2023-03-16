@@ -4,19 +4,13 @@ export { AnnualReports } from './AnnualReports';
 export { Contact } from './Contact';
 export { ResearchImpact } from './ResearchImpact';
 
+// Publications
 export { Publications } from './Publications';
 export { Publication } from './Publication';
 
+// Authors
 export { Authors } from './Authors';
 export { Author } from './Author';
-
-// Publications Refactor
-export { PublicationsBase } from './PublicationsBase';
-export { PublicationsSort } from './PublicationsSort';
-export { PublicationsFilter } from './PublicationsFilter';
-export { PublicationsSearch } from './PublicationsSearch';
-export { PublicationsUnified } from './PublicationsUnified';
-export { PublicationsUnifiedTwo } from './PublicationsUnifiedTwo';
 
 // SignUp and Login
 export { SignUp } from './SignUp';

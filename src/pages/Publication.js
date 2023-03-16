@@ -39,7 +39,7 @@ export const Publication = () => {
   }, [getSinglePublicationById, id]);
 
   const handleEditClick = () => {
-    navigate(`/admin/edit/${id}`);
+    navigate(`/admin/publication/edit/${id}`);
   };
 
   const handleDeleteClick = () => {
