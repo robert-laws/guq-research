@@ -157,7 +157,7 @@ export const Navigation = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1DHkas86637cEVp9JLVvUN4nhiV8hj1l4'
+                            to='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1CYKE0nrMOugPlzcL93s0slXlbd-PWU7l'
                             target='_blank'
                             rel='noreferrer'
                             className={classNames(
@@ -167,7 +167,7 @@ export const Navigation = () => {
                               'block px-4 py-2 text-sm'
                             )}
                           >
-                            Research Areas/Strengths
+                            Research Areas
                           </Link>
                         )}
                       </Menu.Item>
@@ -184,7 +184,7 @@ export const Navigation = () => {
                               'block px-4 py-2 text-sm'
                             )}
                           >
-                            Citations to GU-Q Research by Country
+                            Global
                           </Link>
                         )}
                       </Menu.Item>
@@ -335,7 +335,7 @@ export const Navigation = () => {
                   <Menu.Item>
                     {({ active }) => (
                       <Link
-                        to='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1DHkas86637cEVp9JLVvUN4nhiV8hj1l4'
+                        to='https://app.vosviewer.com/?json=https://drive.google.com/uc?id=1CYKE0nrMOugPlzcL93s0slXlbd-PWU7l'
                         target='_blank'
                         rel='noreferrer'
                         className={classNames(
@@ -345,7 +345,7 @@ export const Navigation = () => {
                           'block px-4 py-2 text-sm'
                         )}
                       >
-                        Research areas/strengths
+                        Research Areas
                       </Link>
                     )}
                   </Menu.Item>
@@ -362,7 +362,7 @@ export const Navigation = () => {
                           'block px-4 py-2 text-sm'
                         )}
                       >
-                        Citations to GU-Q research by country
+                        Global
                       </Link>
                     )}
                   </Menu.Item>
