@@ -17,6 +17,7 @@ const InteractionsState = ({ children }) => {
       publishingGroup: [],
       year: [],
       lastName: [],
+      fullName: [],
       documentType: [],
       language: [],
     },

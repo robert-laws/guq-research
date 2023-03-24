@@ -51,7 +51,11 @@ const PublicationsState = ({ children }) => {
       } else {
         let allPublications = [];
         querySnapshot.forEach((doc) => {
-          allPublications.push({ ...doc.data(), id: doc.id });
+          allPublications.push({
+            ...doc.data(),
+            fullName: `${doc.data().lastName}, ${doc.data().firstName}`,
+            id: doc.id,
+          });
         });
 
         dispatch({

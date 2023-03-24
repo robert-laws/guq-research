@@ -78,6 +78,7 @@ export const Publications = () => {
         publishingGroup: [],
         year: [],
         lastName: [],
+        fullName: [],
         documentType: [],
         language: [],
       });
@@ -105,6 +106,7 @@ export const Publications = () => {
     publishingGroup: [],
     year: [],
     lastName: [],
+    fullName: [],
     documentType: [],
     language: [],
   });
@@ -114,6 +116,7 @@ export const Publications = () => {
     publishingGroup: [],
     year: [],
     lastName: [],
+    fullName: [],
     documentType: [],
     language: [],
   });
@@ -131,6 +134,7 @@ export const Publications = () => {
         publishingGroup: AddToList(publications, 'publishingGroup'),
         year: AddToList(publications, 'year'),
         lastName: AddToList(publications, 'lastName'),
+        fullName: AddToList(publications, 'fullName'),
         documentType: AddToList(publications, 'documentType'),
         language: AddToList(publications, 'language'),
       });
@@ -147,6 +151,7 @@ export const Publications = () => {
         publishingGroup: AddToList(filteredPublications, 'publishingGroup'),
         year: AddToList(filteredPublications, 'year'),
         lastName: AddToList(filteredPublications, 'lastName'),
+        fullName: AddToList(filteredPublications, 'fullName'),
         documentType: AddToList(filteredPublications, 'documentType'),
         language: AddToList(filteredPublications, 'language'),
       });
@@ -243,7 +248,7 @@ export const Publications = () => {
         myList.sort((a, b) => b[0] - a[0]);
       }
 
-      if (property === 'lastName') {
+      if (property === 'lastName' || property === 'fullName') {
         myList.sort((a, b) => {
           const nameA = a[0].toUpperCase(); // ignore upper and lowercase
           const nameB = b[0].toUpperCase(); // ignore upper and lowercase
@@ -320,6 +325,7 @@ export const Publications = () => {
       publishingGroup: [],
       year: [],
       lastName: [],
+      fullName: [],
       documentType: [],
       language: [],
     });
@@ -413,7 +419,7 @@ export const Publications = () => {
             <div className='relative mx-auto flex flex-col max-w-8xl justify-center sm:px-2 lg:flex-row lg:px-2 xl:px-4'>
               <div className='flex-auto lg:relative lg:block lg:flex-none mb-6 lg:mb-0'>
                 <div className='sticky top-[2rem] ml-5 lg:-ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-2 pl-0.5'>
-                  <aside className='w-64 pr-2 xl:w-72 xl:pr-4'>
+                  <aside className='w-64 pr-1 xl:w-72 xl:pr-3'>
                     <div className='self-start sticky top-0 overflow-y-auto'>
                       <div className='flex justify-center'>
                         {/* Sort Controls */}
@@ -451,6 +457,8 @@ export const Publications = () => {
                                   ? 'Author Status'
                                   : list[0] === 'lastName'
                                   ? 'Author Name'
+                                  : list[0] === 'fullName'
+                                  ? 'Full Author Name'
                                   : list[0] === 'publicationAffiliation'
                                   ? 'Publication Affiliation'
                                   : list[0].charAt(0).toUpperCase() +
