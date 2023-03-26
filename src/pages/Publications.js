@@ -77,7 +77,6 @@ export const Publications = () => {
         publicationAffiliation: [],
         publishingGroup: [],
         year: [],
-        lastName: [],
         fullName: [],
         documentType: [],
         language: [],
@@ -105,7 +104,6 @@ export const Publications = () => {
     publicationAffiliation: [],
     publishingGroup: [],
     year: [],
-    lastName: [],
     fullName: [],
     documentType: [],
     language: [],
@@ -115,7 +113,6 @@ export const Publications = () => {
     publicationAffiliation: [],
     publishingGroup: [],
     year: [],
-    lastName: [],
     fullName: [],
     documentType: [],
     language: [],
@@ -133,7 +130,6 @@ export const Publications = () => {
         ),
         publishingGroup: AddToList(publications, 'publishingGroup'),
         year: AddToList(publications, 'year'),
-        lastName: AddToList(publications, 'lastName'),
         fullName: AddToList(publications, 'fullName'),
         documentType: AddToList(publications, 'documentType'),
         language: AddToList(publications, 'language'),
@@ -150,7 +146,6 @@ export const Publications = () => {
         ),
         publishingGroup: AddToList(filteredPublications, 'publishingGroup'),
         year: AddToList(filteredPublications, 'year'),
-        lastName: AddToList(filteredPublications, 'lastName'),
         fullName: AddToList(filteredPublications, 'fullName'),
         documentType: AddToList(filteredPublications, 'documentType'),
         language: AddToList(filteredPublications, 'language'),
@@ -248,7 +243,7 @@ export const Publications = () => {
         myList.sort((a, b) => b[0] - a[0]);
       }
 
-      if (property === 'lastName' || property === 'fullName') {
+      if (property === 'fullName') {
         myList.sort((a, b) => {
           const nameA = a[0].toUpperCase(); // ignore upper and lowercase
           const nameB = b[0].toUpperCase(); // ignore upper and lowercase
@@ -324,7 +319,6 @@ export const Publications = () => {
       publicationAffiliation: [],
       publishingGroup: [],
       year: [],
-      lastName: [],
       fullName: [],
       documentType: [],
       language: [],
@@ -455,10 +449,8 @@ export const Publications = () => {
                                   ? 'Document Type'
                                   : list[0] === 'publishingGroup'
                                   ? 'Author Status'
-                                  : list[0] === 'lastName'
-                                  ? 'Author Name'
                                   : list[0] === 'fullName'
-                                  ? 'Full Author Name'
+                                  ? 'Author Name'
                                   : list[0] === 'publicationAffiliation'
                                   ? 'Publication Affiliation'
                                   : list[0].charAt(0).toUpperCase() +
