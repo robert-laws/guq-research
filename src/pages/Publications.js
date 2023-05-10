@@ -80,6 +80,7 @@ export const Publications = () => {
         fullName: [],
         documentType: [],
         language: [],
+        fundingSource: [],
       });
 
       const results = searchWithFuse(query);
@@ -107,6 +108,7 @@ export const Publications = () => {
     fullName: [],
     documentType: [],
     language: [],
+    fundingSource: [],
   });
 
   const [filterListsResultCount, setFilterListsResultCount] = useState({
@@ -116,6 +118,7 @@ export const Publications = () => {
     fullName: [],
     documentType: [],
     language: [],
+    fundingSource: [],
   });
 
   const [countList, setCountList] = useState([]);
@@ -133,6 +136,7 @@ export const Publications = () => {
         fullName: AddToList(publications, 'fullName'),
         documentType: AddToList(publications, 'documentType'),
         language: AddToList(publications, 'language'),
+        fundingSource: AddToList(publications, 'fundingSource'),
       });
     }
   }, [publications]);
@@ -149,6 +153,7 @@ export const Publications = () => {
         fullName: AddToList(filteredPublications, 'fullName'),
         documentType: AddToList(filteredPublications, 'documentType'),
         language: AddToList(filteredPublications, 'language'),
+        fundingSource: AddToList(filteredPublications, 'fundingSource'),
       });
     }
   }, [filteredPublications]);
@@ -234,7 +239,8 @@ export const Publications = () => {
         property === 'documentType' ||
         property === 'publishingGroup' ||
         property === 'publicationAffiliation' ||
-        property === 'language'
+        property === 'language' ||
+        property === 'fundingSource'
       ) {
         myList.sort((a, b) => b[1] - a[1]);
       }
@@ -322,6 +328,7 @@ export const Publications = () => {
       fullName: [],
       documentType: [],
       language: [],
+      fundingSource: [],
     });
 
     filterPublications(publications);
@@ -451,6 +458,8 @@ export const Publications = () => {
                                   ? 'Author Status'
                                   : list[0] === 'fullName'
                                   ? 'Author Name'
+                                  : list[0] === 'fundingSource'
+                                  ? 'Funding Source'
                                   : list[0] === 'publicationAffiliation'
                                   ? 'Publication Affiliation'
                                   : list[0].charAt(0).toUpperCase() +

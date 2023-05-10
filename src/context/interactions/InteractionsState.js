@@ -19,6 +19,7 @@ const InteractionsState = ({ children }) => {
       fullName: [],
       documentType: [],
       language: [],
+      fundingSource: [],
     },
     sort: {
       field: 'lastName',
