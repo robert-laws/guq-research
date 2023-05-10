@@ -44,6 +44,8 @@ export const UpdatePublication = () => {
     callNumber: '',
     publicationAffiliation: '',
     publishingGroup: '',
+    fundingSource: '',
+    fundingDetails: '',
   });
 
   useEffect(() => {
@@ -95,6 +97,8 @@ export const UpdatePublication = () => {
     'Other Institutions',
     'No Affiliation',
   ];
+
+  const fundingSourceTypes = ['GU-Q', 'QNRF', 'Other'];
 
   const handleTextChange = (e) => {
     setEditedPublication({
@@ -485,6 +489,57 @@ export const UpdatePublication = () => {
                         </div>
                         <p className='mt-2 text-sm text-gray-500'>
                           Original language of the publication.
+                        </p>
+                      </div>
+
+                      <div className='sm:col-span-2'>
+                        <label
+                          htmlFor='fundingSource'
+                          className='block text-sm font-medium text-gray-700'
+                        >
+                          Funding Source
+                        </label>
+                        <div className='mt-1'>
+                          <select
+                            id='fundingSource'
+                            name='fundingSource'
+                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                            onChange={(e) => handleTextChange(e)}
+                            value={editedPublication.fundingSource}
+                          >
+                            <option value=''>Select...</option>
+                            {fundingSourceTypes.map((fundingSource) => (
+                              <option key={fundingSource} value={fundingSource}>
+                                {fundingSource}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <p className='mt-2 text-sm text-gray-500'>
+                          Funding Source of the publication.
+                        </p>
+                      </div>
+
+                      <div className='sm:col-span-4'>
+                        <label
+                          htmlFor='fundingDetails'
+                          className='block text-sm font-medium text-gray-700'
+                        >
+                          Funding Details
+                        </label>
+                        <div className='mt-1'>
+                          <input
+                            id='fundingDetails'
+                            name='fundingDetails'
+                            type='text'
+                            placeholder='ex. Funding through an external grant'
+                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                            onChange={(e) => handleTextChange(e)}
+                            value={editedPublication.fundingDetails}
+                          />
+                        </div>
+                        <p className='mt-2 text-sm text-gray-500'>
+                          Details about the funding source.
                         </p>
                       </div>
 
