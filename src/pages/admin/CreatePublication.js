@@ -83,7 +83,7 @@ export const CreatePublication = () => {
     'No Affiliation',
   ];
 
-  const fundingSourceTypes = ['GU-Q', 'QNRF', 'Other'];
+  const fundingSourceTypes = ['QNRF', 'FRG', 'Multiple', 'None'];
 
   useEffect(() => {
     if (authors.length === 0) {

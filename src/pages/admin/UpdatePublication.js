@@ -98,7 +98,7 @@ export const UpdatePublication = () => {
     'No Affiliation',
   ];
 
-  const fundingSourceTypes = ['GU-Q', 'QNRF', 'Other'];
+  const fundingSourceTypes = ['QNRF', 'FRG', 'Multiple', 'None'];
 
   const handleTextChange = (e) => {
     setEditedPublication({

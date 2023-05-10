@@ -23,21 +23,29 @@ export const DataUpdateGlobal = () => {
         console.log('No publications found');
       }
       querySnapshot.forEach((document) => {
-        const docId = document.id;
-        const docRef = doc(db, 'publications', docId);
-        updateDoc(docRef, {
-          fundingSource: 'Other',
-          fundingDetails: '',
-        });
+        // const docId = document.id;
+        // const docRef = doc(db, 'publications', docId);
 
-        // if (document.data().doi !== '') {
-        //   const docId = document.id;
-        //   const docRef = doc(db, 'publications', docId);
-        //   // console.log('DOI - ', document.data().doi);
-        //   updateDoc(docRef, {
-        //     link: '',
-        //   });
-        // }
+        // updateDoc(docRef, {
+        //   fundingSource: 'Other',
+        //   fundingDetails: '',
+        // });
+
+        if (document.data().fundingSource === 'GU-Q Funding') {
+          const docId = document.id;
+          const docRef = doc(db, 'publications', docId);
+          // console.log('DOI - ', document.data().doi);
+          updateDoc(docRef, {
+            fundingSource: 'FRG',
+          });
+        } else if (document.data().fundingSource === 'Other Funding') {
+          const docId = document.id;
+          const docRef = doc(db, 'publications', docId);
+          // console.log('DOI - ', document.data().doi);
+          updateDoc(docRef, {
+            fundingSource: 'None',
+          });
+        }
       });
     } catch (error) {
       console.log(`Database Error: ${error.message}`);
