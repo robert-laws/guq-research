@@ -46,6 +46,7 @@ export const UpdatePublication = () => {
     publishingGroup: '',
     fundingSource: '',
     fundingDetails: '',
+    sustainableDevelopmentGoals: [''],
   });
 
   useEffect(() => {
@@ -98,7 +99,7 @@ export const UpdatePublication = () => {
     'No Affiliation',
   ];
 
-  const fundingSourceTypes = ['QNRF', 'FRG', 'Multiple', 'None'];
+  const fundingSourceTypes = ['QNRF', 'FRG', 'Other Sources', 'None'];
 
   const handleTextChange = (e) => {
     setEditedPublication({
@@ -761,6 +762,31 @@ export const UpdatePublication = () => {
                             value={editedPublication.callNumber}
                           />
                         </div>
+                      </div>
+
+                      <div className='sm:col-span-2'>
+                        <label
+                          htmlFor='sustainableDevelopmentGoals'
+                          className='block text-sm font-medium text-gray-700'
+                        >
+                          Sustainable Development Goals
+                        </label>
+                        <div className='mt-1'>
+                          <input
+                            id='sustainableDevelopmentGoals'
+                            name='sustainableDevelopmentGoals'
+                            type='text'
+                            placeholder='ex. 978-0-19-067472-3'
+                            className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                            onChange={(e) => handleArrayChange(e)}
+                            value={editedPublication.sustainableDevelopmentGoals.join(
+                              ';'
+                            )}
+                          />
+                        </div>
+                        <p className='mt-2 text-sm text-gray-500'>
+                          Separate Goals with a semicolon.
+                        </p>
                       </div>
                     </div>
                   </div>

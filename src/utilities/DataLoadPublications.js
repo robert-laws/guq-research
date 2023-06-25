@@ -37,6 +37,8 @@ export const DataLoadPublications = () => {
       callNumber: dataFields.callNumber,
       publicationAffiliation: dataFields.publicationAffiliation,
       publishingGroup: dataFields.publishingGroup,
+      fundingSource: dataFields.fundingSource,
+      fundingDetails: dataFields.fundingDetails,
       sustainableDevelopmentGoals: dataFields.sustainableDevelopmentGoals,
     });
   };
