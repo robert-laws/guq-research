@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { db } from '../firebase/firebase-config';
 import { addDoc, collection } from 'firebase/firestore';
-import allData from '../data/publications-data-may-4-2023.json';
+import allData from '../data/publications-data-june-25-2023.json';
 
 export const DataLoadPublications = () => {
   const [loading, setLoading] = useState(false);
@@ -37,6 +37,7 @@ export const DataLoadPublications = () => {
       callNumber: dataFields.callNumber,
       publicationAffiliation: dataFields.publicationAffiliation,
       publishingGroup: dataFields.publishingGroup,
+      sustainableDevelopmentGoals: dataFields.sustainableDevelopmentGoals,
     });
   };
 
