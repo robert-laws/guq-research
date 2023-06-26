@@ -71,7 +71,6 @@ export const Publications = () => {
       const results = fuse.search(searchQuery).map((result) => result.item);
       return results;
     };
-
     if (query.length > 0 && publications.length > 0) {
       setFilters({
         publicationAffiliation: [],
@@ -82,7 +81,6 @@ export const Publications = () => {
         language: [],
         fundingSource: [],
       });
-
       const results = searchWithFuse(query);
       setFiltersTouched(true);
       filterPublications(results);
@@ -272,31 +270,26 @@ export const Publications = () => {
   };
 
   useEffect(() => {
-    const filtersArray = Object.entries(filters);
-
-    const applyFilters = (filterArray) => {
-      let filteredPublications = [];
-      searchResults.length > 0
-        ? (filteredPublications = searchResults)
-        : (filteredPublications = publications);
-
-      for (let i = 0; i < filterArray.length; i++) {
-        const list = filterArray[i][0];
-        const filters = filterArray[i][1];
-
-        if (filters.length > 0) {
-          filteredPublications = filteredPublications.filter((publication) =>
-            filters.includes(publication[list])
-          );
-        }
-      }
-
-      return filteredPublications;
-    };
-
-    if (filtersTouched) {
-      filterPublications(applyFilters(filtersArray));
-    }
+    // const filtersArray = Object.entries(filters);
+    // const applyFilters = (filterArray) => {
+    //   let filteredPublications = [];
+    //   searchResults.length > 0
+    //     ? (filteredPublications = searchResults)
+    //     : (filteredPublications = publications);
+    //   for (let i = 0; i < filterArray.length; i++) {
+    //     const list = filterArray[i][0];
+    //     const filters = filterArray[i][1];
+    //     if (filters.length > 0) {
+    //       filteredPublications = filteredPublications.filter((publication) =>
+    //         filters.includes(publication[list])
+    //       );
+    //     }
+    //   }
+    //   return filteredPublications;
+    // };
+    // if (filtersTouched) {
+    //   filterPublications(applyFilters(filtersArray));
+    // }
   }, [filters]);
 
   const handleListToggle = (index) => {
@@ -350,6 +343,36 @@ export const Publications = () => {
 
   const paginate = ({ selected }) => {
     setCurrentPage(selected + 1);
+  };
+
+  // filter buttons
+  const handleFilterClick = () => {
+    // moved filtering functionality from useEffect after filters to a button click
+    const filtersArray = Object.entries(filters);
+
+    const applyFilters = (filterArray) => {
+      let filteredPublications = [];
+      searchResults.length > 0
+        ? (filteredPublications = searchResults)
+        : (filteredPublications = publications);
+
+      for (let i = 0; i < filterArray.length; i++) {
+        const list = filterArray[i][0];
+        const filters = filterArray[i][1];
+
+        if (filters.length > 0) {
+          filteredPublications = filteredPublications.filter((publication) =>
+            filters.includes(publication[list])
+          );
+        }
+      }
+
+      return filteredPublications;
+    };
+
+    if (filtersTouched) {
+      filterPublications(applyFilters(filtersArray));
+    }
   };
 
   useEffect(() => {
@@ -518,6 +541,16 @@ export const Publications = () => {
                               >
                                 {list[1].length > 5 ? 'Show More' : ''}
                               </p>
+                              {/* Filter Button for Each Group */}
+                              <div className='flex flex-row justify-end mt-1'>
+                                <button
+                                  onClick={() => handleFilterClick()}
+                                  type='button'
+                                  className='rounded bg-green-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600'
+                                >
+                                  Apply Filter
+                                </button>
+                              </div>
                             </div>
                           );
                         })}
