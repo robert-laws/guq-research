@@ -6,6 +6,7 @@ import GoogleScholarIcon from '../images/google-scholar.png';
 import GU360Icon from '../images/gu-360.png';
 import ResearchGateIcon from '../images/research-gate.png';
 import OrcidIcon from '../images/orcid.png';
+import AcademiaEduIcon from '../images/academia-edu.png';
 
 export const AuthorCard = ({
   id,
@@ -19,6 +20,7 @@ export const AuthorCard = ({
   researchGateUrl,
   threeSixtyProfileUrl,
   googleScholarProfileUrl,
+  academiaEdu,
 }) => {
   return (
     <div
@@ -86,6 +88,14 @@ export const AuthorCard = ({
                 iconImage={ResearchGateIcon}
                 link={researchGateUrl}
                 altText='Research Gate'
+                location='card'
+              />
+            )}
+            {academiaEdu && (
+              <ResearchIcon
+                iconImage={AcademiaEduIcon}
+                link={academiaEdu}
+                altText='Academia.edu'
                 location='card'
               />
             )}

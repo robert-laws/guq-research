@@ -12,6 +12,7 @@ import WebOfScienceIcon from '../images/web-of-science.png';
 import GoogleScholarIcon from '../images/google-scholar.png';
 import GU360Icon from '../images/gu-360.png';
 import ResearchGateIcon from '../images/research-gate.png';
+import AcademiaEduIcon from '../images/academia-edu.png';
 import OrcidIcon from '../images/orcid.png';
 import AuthorsContext from '../context/authors/authorsContext';
 import AuthContext from '../context/auth/authContext';
@@ -136,6 +137,13 @@ export const Author = () => {
                   iconImage={ResearchGateIcon}
                   link={singleAuthor.researchGateUrl}
                   altText='Research Gate'
+                />
+              )}
+              {singleAuthor.academiaEdu && (
+                <ResearchIcon
+                  iconImage={AcademiaEduIcon}
+                  link={singleAuthor.academiaEdu}
+                  altText='Academia.edu'
                 />
               )}
             </Heading>

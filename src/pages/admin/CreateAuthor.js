@@ -23,6 +23,7 @@ export const CreateAuthor = () => {
     threeSixtyProfileUrl: '',
     woSId: '',
     orcidId: '',
+    academiaEdu: '',
   });
 
   const handleTextChange = (e) => {
@@ -262,6 +263,26 @@ export const CreateAuthor = () => {
                     className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
                     onChange={(e) => handleTextChange(e)}
                     value={newAuthor.woSId}
+                  />
+                </div>
+              </div>
+
+              <div className='mt-6 pt-4 sm:col-span-full'>
+                <label
+                  htmlFor='academia-edu-profile-url'
+                  className='block text-sm font-medium text-gray-700'
+                >
+                  Academia.edu Profile URL
+                </label>
+                <div className='mt-1'>
+                  <input
+                    id='academia-edu-profile-url'
+                    name='academiaEdu'
+                    type='text'
+                    placeholder='ex. https://www1-georgetown.academia.edu/JohnQuincy'
+                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-gray-300'
+                    onChange={(e) => handleTextChange(e)}
+                    value={newAuthor.academiaEdu}
                   />
                 </div>
               </div>
