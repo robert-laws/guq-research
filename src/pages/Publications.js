@@ -269,27 +269,28 @@ export const Publications = () => {
     return allLists;
   };
 
+  // code used to apply filters to the publications list when a checkbox is clicked
   useEffect(() => {
-    // const filtersArray = Object.entries(filters);
-    // const applyFilters = (filterArray) => {
-    //   let filteredPublications = [];
-    //   searchResults.length > 0
-    //     ? (filteredPublications = searchResults)
-    //     : (filteredPublications = publications);
-    //   for (let i = 0; i < filterArray.length; i++) {
-    //     const list = filterArray[i][0];
-    //     const filters = filterArray[i][1];
-    //     if (filters.length > 0) {
-    //       filteredPublications = filteredPublications.filter((publication) =>
-    //         filters.includes(publication[list])
-    //       );
-    //     }
-    //   }
-    //   return filteredPublications;
-    // };
-    // if (filtersTouched) {
-    //   filterPublications(applyFilters(filtersArray));
-    // }
+    const filtersArray = Object.entries(filters);
+    const applyFilters = (filterArray) => {
+      let filteredPublications = [];
+      searchResults.length > 0
+        ? (filteredPublications = searchResults)
+        : (filteredPublications = publications);
+      for (let i = 0; i < filterArray.length; i++) {
+        const list = filterArray[i][0];
+        const filters = filterArray[i][1];
+        if (filters.length > 0) {
+          filteredPublications = filteredPublications.filter((publication) =>
+            filters.includes(publication[list])
+          );
+        }
+      }
+      return filteredPublications;
+    };
+    if (filtersTouched) {
+      filterPublications(applyFilters(filtersArray));
+    }
   }, [filters]);
 
   const handleListToggle = (index) => {
@@ -542,7 +543,7 @@ export const Publications = () => {
                                 {list[1].length > 5 ? 'Show More' : ''}
                               </p>
                               {/* Filter Button for Each Group */}
-                              <div className='flex flex-row justify-end mt-1'>
+                              {/* <div className='flex flex-row justify-end mt-1'>
                                 <button
                                   onClick={() => handleFilterClick()}
                                   type='button'
@@ -550,7 +551,7 @@ export const Publications = () => {
                                 >
                                   Apply Filter
                                 </button>
-                              </div>
+                              </div> */}
                             </div>
                           );
                         })}
