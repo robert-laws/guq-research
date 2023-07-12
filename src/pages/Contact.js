@@ -6,7 +6,7 @@ export const Contact = () => {
     <Container>
       <Heading>Contact</Heading>
       <main>
-        <div className='max-w-prose text-lg pb-10'>
+        {/* <div className='max-w-prose text-lg pb-10'>
           <p className='mt-8 text-xl leading-8 text-gray-500'>
             For the content of the database:
           </p>
@@ -29,8 +29,8 @@ export const Contact = () => {
               lm1470@georgetown.edu
             </a>
           </p>
-        </div>
-        <div className='max-w-prose text-lg border-t border-gray-200'>
+        </div> */}
+        <div className='max-w-prose text-lg border-b border-gray-200'>
           <p className='mt-8 text-xl leading-8 text-gray-500'>
             For the design and technical features of the database:
           </p>

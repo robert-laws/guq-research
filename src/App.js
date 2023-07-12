@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigation, Footer, PrivateRoute } from './components';
 import {
   Home,
+  Introduction,
+  DataSources,
+  Methodology,
   Publications,
   Publication,
   AnnualReports,
@@ -41,6 +44,9 @@ function App() {
             <Route path='/annual-reports' element={<AnnualReports />} />
             <Route path='/research-impact' element={<ResearchImpact />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/introduction' element={<Introduction />} />
+            <Route path='/data-sources' element={<DataSources />} />
+            <Route path='/methodology' element={<Methodology />} />
 
             <Route path='/authors' element={<Authors />} />
             <Route path='/authors/:id' element={<Author />} />

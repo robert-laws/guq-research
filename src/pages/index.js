@@ -1,5 +1,8 @@
 // Public Pages
 export { Home } from './Home';
+export { Introduction } from './Introduction';
+export { DataSources } from './DataSources';
+export { Methodology } from './Methodology';
 export { AnnualReports } from './AnnualReports';
 export { Contact } from './Contact';
 export { ResearchImpact } from './ResearchImpact';
