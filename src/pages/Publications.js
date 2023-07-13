@@ -495,6 +495,11 @@ export const Publications = () => {
           </div>
 
           <div className='flex py-1 my-1 mx-28 rounded-lg'>
+            {selectedFiltersArray.length > 0 && (
+              <span className='font-bold text-gray-900 px-3 pt-0'>
+                Applied Filters:
+              </span>
+            )}
             {selectedFiltersArray.length > 0 &&
               selectedFiltersArray.map((filter) => {
                 // console.log(filter);

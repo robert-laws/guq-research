@@ -11,22 +11,30 @@ export const Introduction = () => {
           <div className='lg:pr-8 lg:pt-4'>
             <div className='lg:max-w-lg'>
               <p className='mt-6 text-lg leading-8 text-gray-600 text-justify'>
-                This is a comprehensive database of publications completed by
-                members of Georgetown University in Qatar (GU-Q). It includes
-                (1) works published during an author's tenure at GU-Q, from the
-                year following appointment on and (2) publications that list
-                GU-Q as an author's affiliation. The database does not include
-                works published before joining GU-Q or works where the authors
-                list institutions other than GU-Q or Georgetown University as
-                their affiliation. Please search the database to discover
-                researchers, browse and access publications and author profiles,
-                and visualize GU-Q's research output and impact.
+                The Georgetown University in Qatar (GU-Q) Research Database is a
+                platform for exploring and understanding the diverse
+                intellectual contributions from our esteemed scholars. This
+                dynamic and all-encompassing database houses a broad spectrum of
+                scholarly works produced by members of the GU-Q community. It
+                encapsulates an array of publications crafted during each
+                author's tenure at GU-Q, starting from the year subsequent to
+                their appointment. It also includes works that proudly bear GU-Q
+                as the author's institutional affiliation. However, please note
+                that the database does not encompass publications prior to the
+                author's affiliation with GU-Q or those affiliated with
+                institutions other than GU-Q or Georgetown University. This
+                digital hub not only enables you to uncover our researchers and
+                their groundbreaking work but also offers you an opportunity to
+                explore their profiles and delve into the depth and breadth of
+                GU-Q's scholarly impact. Navigate this platform, discover our
+                research prowess, and join us on a journey of intellectual
+                exploration and discovery.
               </p>
             </div>
           </div>
           <img
             src={FacultyBooks}
-            alt='Faculty Publications'
+            alt='Scholar Publications'
             className='lg:max-w-xl max-w-md rounded-xl shadow-xl ring-1 ring-gray-400/10 lg:mt-12 mt-0'
           />
         </div>
