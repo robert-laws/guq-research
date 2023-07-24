@@ -13,22 +13,21 @@ export const Introduction = () => {
               <p className='mt-6 text-lg leading-8 text-gray-600 text-justify'>
                 The Georgetown University in Qatar (GU-Q) Research Database is a
                 platform for exploring and understanding the diverse
-                intellectual contributions from our esteemed scholars. This
+                intellectual contributions of our esteemed scholars. This
                 dynamic and all-encompassing database houses a broad spectrum of
                 scholarly works produced by members of the GU-Q community. It
                 encapsulates an array of publications crafted during each
-                author's tenure at GU-Q, starting from the year subsequent to
-                their appointment. It also includes works that proudly bear GU-Q
-                as the author's institutional affiliation. However, please note
-                that the database does not encompass publications prior to the
-                author's affiliation with GU-Q or those affiliated with
-                institutions other than GU-Q or Georgetown University. This
-                digital hub not only enables you to uncover our researchers and
-                their groundbreaking work but also offers you an opportunity to
-                explore their profiles and delve into the depth and breadth of
-                GU-Q's scholarly impact. Navigate this platform, discover our
-                research prowess, and join us on a journey of intellectual
-                exploration and discovery.
+                author's tenure at GU-Q, starting from the year after their
+                appointment. It also includes works proudly bearing GU-Q as the
+                author's institutional affiliation. The database does not
+                encompass publications before the author's affiliation with GU-Q
+                or those affiliated with institutions other than GU-Q or
+                Georgetown University. This digital hub enables you to uncover
+                our researchers and their groundbreaking work, explore their
+                profiles, and delve into the depth and breadth of GU-Q's
+                scholarly impact. Navigate this platform, discover our research
+                prowess, and join us on a journey of intellectual exploration
+                and discovery.
               </p>
             </div>
           </div>

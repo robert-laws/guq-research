@@ -81,7 +81,7 @@ export const Navigation = () => {
                           </Link>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
+                      {/* <Menu.Item>
                         {({ active }) => (
                           <Link
                             to='/data-sources'
@@ -95,7 +95,7 @@ export const Navigation = () => {
                             Data Sources
                           </Link>
                         )}
-                      </Menu.Item>
+                      </Menu.Item> */}
                       <Menu.Item>
                         {({ active }) => (
                           <Link
@@ -343,7 +343,7 @@ export const Navigation = () => {
                       </Link>
                     )}
                   </Menu.Item>
-                  <Menu.Item>
+                  {/* <Menu.Item>
                     {({ active }) => (
                       <Link
                         to='/data-sources'
@@ -357,7 +357,7 @@ export const Navigation = () => {
                         Data Sources
                       </Link>
                     )}
-                  </Menu.Item>
+                  </Menu.Item> */}
                   <Menu.Item>
                     {({ active }) => (
                       <Link
