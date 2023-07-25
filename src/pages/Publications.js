@@ -199,8 +199,10 @@ export const Publications = () => {
           if (countList.find((item) => item[0] === id)) {
             let count = countList.find((item) => item[0] === id)[1];
             item.querySelector('span').innerHTML = `(${count})`;
+            item.parentElement.parentElement.style.display = 'flex';
           } else {
             item.querySelector('span').innerHTML = '(0)';
+            item.parentElement.parentElement.style.display = 'none';
           }
         });
       }
