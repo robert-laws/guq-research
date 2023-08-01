@@ -6,6 +6,7 @@ import AuthContext from '../context/auth/authContext';
 import { useLogout } from '../hooks';
 import Report2020 from '../reports/GUQ-Research-2020.pdf';
 import MapCitations from '../reports/MapCitations.pdf';
+import MediaReport from '../reports/guq-in-the-media.pdf';
 // import { DataSources, Introduction, Methodology } from '../pages';
 
 export const Navigation = () => {
@@ -213,7 +214,7 @@ export const Navigation = () => {
               >
                 <div>
                   <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-medium text-white hover:bg-transparent'>
-                    Research Impact
+                    Impact Reports
                     {/* <ChevronDownIcon
                       className='-mr-1 h-5 w-5 text-gray-400'
                       aria-hidden='true'
@@ -263,6 +264,23 @@ export const Navigation = () => {
                             )}
                           >
                             Global
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to={MediaReport}
+                            target='_blank'
+                            download='guq-in-the-media.pdf'
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            GU-Q in the Media
                           </Link>
                         )}
                       </Menu.Item>
@@ -474,7 +492,7 @@ export const Navigation = () => {
           >
             <div>
               <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-semibold text-white hover:bg-transparent'>
-                Research Impact
+                Impact Reports
                 {/* <ChevronDownIcon
                   className='-mr-1 h-5 w-5 text-gray-400'
                   aria-hidden='true'
@@ -524,6 +542,23 @@ export const Navigation = () => {
                         )}
                       >
                         Global
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to={MediaReport}
+                        target='_blank'
+                        download='guq-in-the-media.pdf'
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        GU-Q in the Media
                       </Link>
                     )}
                   </Menu.Item>
