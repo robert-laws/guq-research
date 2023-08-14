@@ -19,6 +19,7 @@ import {
   SignUp,
   NotFound,
   GlobalImpact,
+  ResearchGrants,
 } from './pages';
 import {
   CreatePublication,
@@ -49,6 +50,7 @@ function App() {
             <Route path='/data-sources' element={<DataSources />} />
             <Route path='/methodology' element={<Methodology />} />
             <Route path='/global-impact' element={<GlobalImpact />} />
+            <Route path='/research-grants' element={<ResearchGrants />} />
 
             <Route path='/authors' element={<Authors />} />
             <Route path='/authors/:id' element={<Author />} />

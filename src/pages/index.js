@@ -7,6 +7,7 @@ export { AnnualReports } from './AnnualReports';
 export { Contact } from './Contact';
 export { ResearchImpact } from './ResearchImpact';
 export { GlobalImpact } from './GlobalImpact';
+export { ResearchGrants } from './ResearchGrants';
 
 // Publications
 export { Publications } from './Publications';
