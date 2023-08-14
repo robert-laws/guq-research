@@ -214,7 +214,7 @@ export const Navigation = () => {
               >
                 <div>
                   <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-medium text-white hover:bg-transparent'>
-                    Impact Reports
+                    Impact
                     {/* <ChevronDownIcon
                       className='-mr-1 h-5 w-5 text-gray-400'
                       aria-hidden='true'
@@ -490,7 +490,7 @@ export const Navigation = () => {
           >
             <div>
               <Menu.Button className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-0 font-semibold text-white hover:bg-transparent'>
-                Impact Reports
+                Impact
                 {/* <ChevronDownIcon
                   className='-mr-1 h-5 w-5 text-gray-400'
                   aria-hidden='true'
