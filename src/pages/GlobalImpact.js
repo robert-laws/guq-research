@@ -4,7 +4,7 @@ import { Heading, Container } from '../components';
 export const GlobalImpact = () => {
   return (
     <Container>
-      <Heading>Methodology</Heading>
+      <Heading>Research Impact</Heading>
       <main>
         <div className='mx-auto lg:mx-0 lg:max-w-none'>
           <div className='lg:pr-8 lg:pt-4'>
