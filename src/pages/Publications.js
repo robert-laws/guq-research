@@ -338,15 +338,15 @@ export const Publications = () => {
     return filteredSelections;
   };
 
-  const handleListToggle = (index) => {
-    const list = filterListRef.current[index];
-    list.classList.toggle('filter-list');
-    if (list.querySelectorAll('p')[1].innerHTML === 'Show More') {
-      list.querySelectorAll('p')[1].innerHTML = 'Show Less';
-    } else {
-      list.querySelectorAll('p')[1].innerHTML = 'Show More';
-    }
-  };
+  // const handleListToggle = (index) => {
+  //   const list = filterListRef.current[index];
+  //   list.classList.toggle('filter-list');
+  //   if (list.querySelectorAll('p')[1].innerHTML === 'Show More') {
+  //     list.querySelectorAll('p')[1].innerHTML = 'Show Less';
+  //   } else {
+  //     list.querySelectorAll('p')[1].innerHTML = 'Show More';
+  //   }
+  // };
 
   useEffect(() => {
     if (filteredPublications.length > 0 && sort) {
@@ -558,7 +558,8 @@ export const Publications = () => {
                         {getLists(filterLists).map((list, index) => {
                           return (
                             <div
-                              className='pr-4 pb-4 filter-list'
+                              // className='pr-4 pb-4 filter-list'
+                              className='pr-4 pb-4'
                               ref={(ref) =>
                                 (filterListRef.current[index] = ref)
                               }
@@ -625,12 +626,12 @@ export const Publications = () => {
                                   </div>
                                 );
                               })}
-                              <p
+                              {/* <p
                                 onClick={() => handleListToggle(index)}
                                 className='text-blue-500 hover:underline hover:cursor-pointer filter-list-show'
                               >
                                 {list[1].length > 5 ? 'Show More' : ''}
-                              </p>
+                              </p> */}
                               {/* Filter Button for Each Group */}
                               <div className='flex flex-row justify-end mt-1'>
                                 {/* <button
