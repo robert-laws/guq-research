@@ -253,9 +253,7 @@ export const Navigation = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to={MapCitations}
-                            target='_blank'
-                            download='MapCitations.pdf'
+                            to='/global-impact'
                             className={classNames(
                               active
                                 ? 'bg-gray-100 text-gray-900'
@@ -531,9 +529,7 @@ export const Navigation = () => {
                   <Menu.Item>
                     {({ active }) => (
                       <Link
-                        to={MapCitations}
-                        target='_blank'
-                        download='MapCitations.pdf'
+                        to='/global-impact'
                         className={classNames(
                           active
                             ? 'bg-gray-100 text-gray-900'

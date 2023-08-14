@@ -18,6 +18,7 @@ import {
   Login,
   SignUp,
   NotFound,
+  GlobalImpact,
 } from './pages';
 import {
   CreatePublication,
@@ -47,6 +48,7 @@ function App() {
             <Route path='/introduction' element={<Introduction />} />
             <Route path='/data-sources' element={<DataSources />} />
             <Route path='/methodology' element={<Methodology />} />
+            <Route path='/global-impact' element={<GlobalImpact />} />
 
             <Route path='/authors' element={<Authors />} />
             <Route path='/authors/:id' element={<Author />} />

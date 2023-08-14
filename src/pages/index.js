@@ -6,6 +6,7 @@ export { Methodology } from './Methodology';
 export { AnnualReports } from './AnnualReports';
 export { Contact } from './Contact';
 export { ResearchImpact } from './ResearchImpact';
+export { GlobalImpact } from './GlobalImpact';
 
 // Publications
 export { Publications } from './Publications';
