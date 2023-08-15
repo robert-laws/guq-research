@@ -16,14 +16,14 @@ export const ResearchGrants = () => {
                       scope='col'
                       className='py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0'
                     >
-                      Location of authors citing GU-Q publications
+                      University
                     </th>
                     <th
                       scope='col'
                       className='px-3 py-3.5 text-left text-sm font-semibold text-gray-900'
                     >
-                      Number of documents citing GU-Q publications (as of end of
-                      July 2023)
+                      Number of grants since university was founded until end of
+                      July 2023
                     </th>
                   </tr>
                 </thead>
@@ -102,6 +102,9 @@ export const ResearchGrants = () => {
                   </tr>
                 </tbody>
               </table>
+              <p>
+                Source: <a href='https://www.dimensions.ai/'>Dimensions</a>
+              </p>
             </div>
           </div>
         </div>

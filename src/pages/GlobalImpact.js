@@ -926,6 +926,9 @@ export const GlobalImpact = () => {
                   </tr>
                 </tbody>
               </table>
+              <p>
+                Source: <a href='https://www.scopus.com/home.uri'>Scopus</a>
+              </p>
             </div>
           </div>
         </div>
